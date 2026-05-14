@@ -1,0 +1,63 @@
+{
+  "updated": "2026-05-15",
+  "note": "2026世界杯赛程数据（待官方确认后更新精确日期）",
+  "groups": [
+    {
+      "group": "A",
+      "teams": ["Mexico", "Canada", "USA", "New Zealand"]
+    },
+    {
+      "group": "B",
+      "teams": ["Portugal", "Italy", "Morocco", "Iran"]
+    },
+    {
+      "group": "C",
+      "teams": ["France", "Netherlands", "Senegal", "Ecuador"]
+    },
+    {
+      "group": "D",
+      "teams": ["Brazil", "Croatia", "Nigeria", "Australia"]
+    },
+    {
+      "group": "E",
+      "teams": ["England", "Denmark", "Algeria", "South Korea"]
+    },
+    {
+      "group": "F",
+      "teams": ["Argentina", "Uruguay", "Ghana", "Saudi Arabia"]
+    },
+    {
+      "group": "G",
+      "teams": ["Spain", "Switzerland", "Egypt", "Japan"]
+    },
+    {
+      "group": "H",
+      "teams": ["Germany", "Belgium", "Cameroon", "USA"]
+    },
+    {
+      "group": "I",
+      "teams": ["Colombia", "Sweden", "Tunisia", "Qatar"]
+    },
+    {
+      "group": "J",
+      "teams": ["Serbia", "Poland", "Ivory Coast", "Paraguay"]
+    },
+    {
+      "group": "K",
+      "teams": ["Mexico", "Peru", "South Africa", "Chile"]
+    },
+    {
+      "group": "L",
+      "teams": ["Ukraine", "Norway", "Jamaica", "Costa Rica"]
+    }
+  ],
+  "knockout": {
+    "round32": "2026-06-29 至 2026-07-02",
+    "round16": "2026-07-04 至 2026-07-07",
+    "quarter": "2026-07-09 至 2026-07-10",
+    "semi": "2026-07-14 至 2026-07-15",
+    "thirdPlace": "2026-07-18",
+    "final": "2026-07-19"
+  },
+  "matches": []
+}

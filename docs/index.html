@@ -8,16 +8,23 @@
 </head>
 <body>
   <header>
-    <h1>🏆 2026 世界杯夺冠概率排行榜</h1>
-    <p class="subtitle">数据综合自主流博彩赔率 · 每周更新</p>
-    <p class="update-badge" id="updateBadge">更新于：加载中...</p>
+    <h1>🏆 2026 世界杯</h1>
+    <p class="subtitle">夺冠概率 · 赛程 · 数据综合</p>
+    <p class="update-badge" id="updateBadge">加载中...</p>
   </header>
 
-  <main>
-    <!-- 排名卡片区 -->
+  <!-- 导航 Tab -->
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="odds">📊 夺冠概率</button>
+    <button class="tab-btn" data-tab="schedule">📅 赛程分组</button>
+    <button class="tab-btn" data-tab="predictions">🔮 八强·黑马</button>
+  </nav>
+
+  <!-- ======== Tab: 夺冠概率 ======== -->
+  <main id="tab-odds" class="tab-content active">
     <section id="rankingSection">
       <div class="controls">
-        <label for="sortSelect">排序方式：</label>
+        <label for="sortSelect">排序：</label>
         <select id="sortSelect">
           <option value="composite">综合概率 ↓</option>
           <option value="odds">赔率系数 ↓</option>
@@ -25,28 +32,55 @@
         </select>
         <span class="team-count" id="teamCount">共 0 支球队</span>
       </div>
-      <div class="ranking-grid" id="rankingGrid">
-        <!-- 由 JavaScript 渲染 -->
-      </div>
+      <div class="ranking-grid" id="rankingGrid"></div>
     </section>
 
-    <!-- 图表区 -->
     <section id="chartSection">
-      <h2>夺冠概率排行柱状图</h2>
+      <h2>🏆 夺冠概率柱状图（前16）</h2>
       <canvas id="barChart"></canvas>
     </section>
 
     <section id="trendSection">
-      <h2>热门球队夺冠概率趋势</h2>
-      <p class="section-note">每周更新一次，展示变化趋势</p>
+      <h2>📈 热门球队趋势</h2>
+      <p class="section-note">每周更新，展示变化趋势</p>
       <div id="trendContainer">
-        <p class="placeholder-text">趋势数据将在多次更新后呈现 📈</p>
+        <p class="placeholder-text">数据逐渐积累中...</p>
       </div>
     </section>
   </main>
 
+  <!-- ======== Tab: 赛程分组 ======== -->
+  <main id="tab-schedule" class="tab-content">
+    <section id="groupSection">
+      <h2>📋 小组分组</h2>
+      <p class="section-note">12个小组 · 每组前两名+8个最佳第三名晋级32强</p>
+      <div class="groups-grid" id="groupsGrid"></div>
+    </section>
+
+    <section id="knockoutSection">
+      <h2>🏅 淘汰赛阶段</h2>
+      <div class="knockout-info" id="knockoutInfo"></div>
+    </section>
+  </main>
+
+  <!-- ======== Tab: 八强+黑马 ======== -->
+  <main id="tab-predictions" class="tab-content">
+    <section id="qfSection">
+      <h2>🎯 八强预测</h2>
+      <p class="section-note">基于夺冠概率 + 大赛底蕴 + 分组形势综合推断</p>
+      <div class="qf-grid" id="qfList"></div>
+    </section>
+
+    <section id="darkHorseSection">
+      <h2>🐎 最可能爆冷的四支黑马</h2>
+      <p class="section-note">高赔率队伍中具备超常发挥潜力的球队</p>
+      <div class="dh-grid" id="darkHorseList"></div>
+      <div class="dh-analysis" id="dhAnalysis"></div>
+    </section>
+  </main>
+
   <footer>
-    <p>数据来源：Bet365 · William Hill · DraftKings 等主流博彩平台</p>
+    <p>数据来源：综合主流博彩平台赔率 | 赛程数据参考官方安排</p>
     <p>⚠️ 概率仅供参考，不构成投注建议</p>
   </footer>
 
