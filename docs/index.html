@@ -33,6 +33,14 @@
 <footer><p>数据来源：综合主流博彩平台赔率 | 赛程数据参考官方安排</p><p>⚠️ 概率仅供参考，不构成投注建议</p></footer>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
+window.onerror = function(msg, url, line, col, err) {
+    var eb = document.getElementById("errorBar"); if (eb) { eb.style.display = "block"; eb.textContent = "❌ " + msg + " (行" + line + ")"; }
+    var el = document.getElementById('updateBadge');
+    if (el) el.textContent = 'JS: ' + (msg || '') + ' (line ' + line + ')';
+};
+try {
+// ORIGINAL CODE
+
 // ===== Tab switching =====
 (function() {
   var btns = document.querySelectorAll('.tab-btn');
@@ -372,6 +380,11 @@ window.onerror = function(msg, url, line) {
   if (uB) uB.textContent = '⚠️ 页面错误: ' + msg + ' (第' + line + '行)';
 };
 
+
+} catch(e) {
+    var el2 = document.getElementById('updateBadge');
+    if (el2) el2.textContent = 'ERROR: ' + e.message;
+}
 </script>
 >
 </body>
