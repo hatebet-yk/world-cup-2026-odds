@@ -1,0 +1,92 @@
+{
+  "round32": [
+    {
+      "match": 1,
+      "team1": "Brazil",
+      "team2": "Peru"
+    },
+    {
+      "match": 2,
+      "team1": "Argentina",
+      "team2": "Iran"
+    },
+    {
+      "match": 3,
+      "team1": "Germany",
+      "team2": "Ecuador"
+    },
+    {
+      "match": 4,
+      "team1": "Portugal",
+      "team2": "Canada"
+    },
+    {
+      "match": 5,
+      "team1": "Italy",
+      "team2": "Nigeria"
+    },
+    {
+      "match": 6,
+      "team1": "Croatia",
+      "team2": "Switzerland"
+    },
+    {
+      "match": 7,
+      "team1": "Denmark",
+      "team2": "Poland"
+    },
+    {
+      "match": 8,
+      "team1": "USA",
+      "team2": "Morocco"
+    },
+    {
+      "match": 9,
+      "team1": "France",
+      "team2": "Norway"
+    },
+    {
+      "match": 10,
+      "team1": "England",
+      "team2": "Chile"
+    },
+    {
+      "match": 11,
+      "team1": "Spain",
+      "team2": "Colombia"
+    },
+    {
+      "match": 12,
+      "team1": "Netherlands",
+      "team2": "Australia"
+    },
+    {
+      "match": 13,
+      "team1": "Belgium",
+      "team2": "Sweden"
+    },
+    {
+      "match": 14,
+      "team1": "Uruguay",
+      "team2": "Senegal"
+    },
+    {
+      "match": 15,
+      "team1": "Mexico",
+      "team2": "South Korea"
+    },
+    {
+      "match": 16,
+      "team1": "Japan",
+      "team2": "Serbia"
+    }
+  ],
+  "round16": [],
+  "quarter": [],
+  "semi": [],
+  "final": {
+    "team1": "TBD",
+    "team2": "TBD",
+    "winner": "TBD"
+  }
+}

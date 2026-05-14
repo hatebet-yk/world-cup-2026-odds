@@ -244,6 +244,14 @@ main { /* keep for fallback */ }
   margin-bottom: 0.5rem;
 }
 
+#trendChart {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  max-height: 400px;
+}
+
 .section-note {
   color: var(--text-dim);
   font-size: 0.85rem;
@@ -495,5 +503,195 @@ footer p + p {
   .team-card .prob-bar { width: 60px; }
   .groups-grid { grid-template-columns: 1fr; }
   .dh-grid { grid-template-columns: 1fr; }
+
+.team-sources {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
   .tab-btn { font-size: 0.9rem; padding: 0.7rem 1rem; }
 }
+
+/* ========== Tab: 淘汰赛对阵 ========== */
+.bracket-round {
+  margin-bottom: 1.5rem;
+}
+
+.bracket-round h3 {
+  font-size: 1.2rem;
+  color: var(--accent-light);
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.bracket-matches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.6rem;
+}
+
+.bracket-match {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.bracket-team {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.35rem;
+  border-radius: 6px;
+}
+
+.bracket-team.bracket-winner {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.bracket-flag {
+  font-size: 1.1rem;
+}
+
+.bracket-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bracket-vs {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.bracket-score {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  min-width: 1.5rem;
+  text-align: right;
+}
+
+.bracket-final {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, var(--card-bg), rgba(245, 158, 11, 0.08));
+}
+
+.bracket-final-round h3 {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ========== Tab: 球员赔率 ========== */
+.player-grid {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.player-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.player-rank {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-dim);
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.player-flag {
+  font-size: 1.5rem;
+  width: 1.8rem;
+  text-align: center;
+}
+
+.player-info {
+  min-width: 6rem;
+  flex: 1;
+}
+
+.player-name {
+  display: block;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.player-country {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.player-odds {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.player-prob-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 100px;
+}
+
+.player-bar-bg {
+  flex: 1;
+  height: 6px;
+  background: var(--bg);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.player-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  transition: width 0.6s ease;
+}
+
+.player-ball-fill {
+  background: linear-gradient(90deg, var(--gold), #f97316) !important;
+}
+
+.player-prob-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  min-width: 2.8rem;
+  text-align: right;
+}
+
+.player-sources {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.player-reason {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  width: 100%;
+  margin-top: 0.2rem;
+  padding-top: 0.3rem;
+  border-top: 1px solid var(--border);
+}
+

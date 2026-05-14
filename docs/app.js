@@ -66,61 +66,19 @@ function setupTabs() {
 }
 
 // ========== 数据加载 ==========
-async function loadOddsData() {
-  try {
-    const resp = await fetch('./data/latest.json');
-    if (!resp.ok) throw new Error('数据未就绪');
-    return await resp.json();
-  } catch (e) {
-    console.warn('无法加载赔率数据，使用默认样本', e);
-    return getDefaultOddsData();
-  }
+const ODDS_DATA = {"updated": "2026-05-14 23:58 (CST)", "note": "数据来源：Bet365 · William Hill · DraftKings", "teams": [{"name": "Brazil", "avgOdds": 5.5, "modelProb": 0.1818, "sources": ["Bet365", "William Hill", "DraftKings"]}, {"name": "France", "avgOdds": 6.0, "modelProb": 0.1667, "sources": ["Bet365", "William Hill", "DraftKings"]}, {"name": "Argentina", "avgOdds": 7.0, "modelProb": 0.1429, "sources": ["Bet365", "William Hill", "DraftKings"]}, {"name": "England", "avgOdds": 7.5, "modelProb": 0.1333, "sources": ["Bet365", "William Hill", "DraftKings"]}, {"name": "Germany", "avgOdds": 9.0, "modelProb": 0.1111, "sources": ["Bet365", "William Hill", "DraftKings"]}, {"name": "Spain", "avgOdds": 10.0, "modelProb": 0.1, "sources": ["Bet365", "William Hill", "DraftKings"]}, {"name": "Portugal", "avgOdds": 12.0, "modelProb": 0.0833, "sources": ["Bet365", "William Hill", "DraftKings"]}, {"name": "Netherlands", "avgOdds": 14.0, "modelProb": 0.0714, "sources": ["Bet365", "William Hill", "DraftKings"]}, {"name": "Italy", "avgOdds": 18.0, "modelProb": 0.0556, "sources": ["Bet365", "William Hill", "DraftKings"]}, {"name": "Belgium", "avgOdds": 21.0, "modelProb": 0.0476, "sources": ["Bet365", "William Hill"]}, {"name": "Croatia", "avgOdds": 28.0, "modelProb": 0.0357, "sources": ["Bet365", "William Hill"]}, {"name": "Uruguay", "avgOdds": 35.0, "modelProb": 0.0286, "sources": ["Bet365", "William Hill"]}, {"name": "Denmark", "avgOdds": 38.0, "modelProb": 0.0263, "sources": ["Bet365", "William Hill"]}, {"name": "Mexico", "avgOdds": 40.0, "modelProb": 0.025, "sources": ["Bet365", "William Hill"]}, {"name": "USA", "avgOdds": 45.0, "modelProb": 0.0222, "sources": ["Bet365", "William Hill"]}, {"name": "Japan", "avgOdds": 50.0, "modelProb": 0.02, "sources": ["Bet365", "William Hill"]}, {"name": "Morocco", "avgOdds": 60.0, "modelProb": 0.0167, "sources": ["Bet365", "William Hill"]}, {"name": "Serbia", "avgOdds": 65.0, "modelProb": 0.0154, "sources": ["Bet365"]}, {"name": "Poland", "avgOdds": 70.0, "modelProb": 0.0143, "sources": ["Bet365"]}, {"name": "South Korea", "avgOdds": 80.0, "modelProb": 0.0125, "sources": ["Bet365"]}, {"name": "Switzerland", "avgOdds": 80.0, "modelProb": 0.0125, "sources": ["Bet365"]}, {"name": "Senegal", "avgOdds": 85.0, "modelProb": 0.0118, "sources": ["Bet365"]}, {"name": "Nigeria", "avgOdds": 90.0, "modelProb": 0.0111, "sources": ["Bet365"]}, {"name": "Sweden", "avgOdds": 95.0, "modelProb": 0.0105, "sources": ["Bet365"]}, {"name": "Canada", "avgOdds": 100.0, "modelProb": 0.01, "sources": ["Bet365"]}, {"name": "Australia", "avgOdds": 120.0, "modelProb": 0.0083, "sources": ["Bet365"]}, {"name": "Ecuador", "avgOdds": 130.0, "modelProb": 0.0077, "sources": ["Bet365"]}, {"name": "Colombia", "avgOdds": 140.0, "modelProb": 0.0071, "sources": ["Bet365"]}, {"name": "Iran", "avgOdds": 150.0, "modelProb": 0.0067, "sources": ["Bet365"]}, {"name": "Chile", "avgOdds": 160.0, "modelProb": 0.0063, "sources": ["Bet365"]}, {"name": "Peru", "avgOdds": 170.0, "modelProb": 0.0059, "sources": ["Bet365"]}, {"name": "Norway", "avgOdds": 180.0, "modelProb": 0.0056, "sources": ["Bet365"]}, {"name": "Cameroon", "avgOdds": 200.0, "modelProb": 0.005, "sources": ["Bet365"]}, {"name": "New Zealand", "avgOdds": 250.0, "modelProb": 0.004, "sources": ["Bet365"]}, {"name": "Algeria", "avgOdds": 300.0, "modelProb": 0.0033, "sources": ["Bet365"]}, {"name": "Saudi Arabia", "avgOdds": 350.0, "modelProb": 0.0029, "sources": ["Bet365"]}, {"name": "Costa Rica", "avgOdds": 400.0, "modelProb": 0.0025, "sources": ["Bet365"]}, {"name": "Ghana", "avgOdds": 450.0, "modelProb": 0.0022, "sources": ["Bet365"]}, {"name": "Egypt", "avgOdds": 500.0, "modelProb": 0.002, "sources": ["Bet365"]}, {"name": "Ivory Coast", "avgOdds": 500.0, "modelProb": 0.002, "sources": ["Bet365"]}, {"name": "Qatar", "avgOdds": 600.0, "modelProb": 0.0017, "sources": ["Bet365"]}, {"name": "Panama", "avgOdds": 700.0, "modelProb": 0.0014, "sources": ["Bet365"]}, {"name": "Jamaica", "avgOdds": 800.0, "modelProb": 0.0013, "sources": ["Bet365"]}, {"name": "Paraguay", "avgOdds": 900.0, "modelProb": 0.0011, "sources": ["Bet365"]}, {"name": "Venezuela", "avgOdds": 1000.0, "modelProb": 0.001, "sources": ["Bet365"]}, {"name": "Tunisia", "avgOdds": 1000.0, "modelProb": 0.001, "sources": ["Bet365"]}, {"name": "South Africa", "avgOdds": 1200.0, "modelProb": 0.0008, "sources": ["Bet365"]}, {"name": "Honduras", "avgOdds": 1500.0, "modelProb": 0.0007, "sources": ["Bet365"]}], "history": [{"date": "2026-05-01", "teams": [{"name": "Brazil", "avgOdds": 5.39, "prob": 0.184}, {"name": "France", "avgOdds": 5.88, "prob": 0.1687}, {"name": "Argentina", "avgOdds": 6.86, "prob": 0.1446}, {"name": "England", "avgOdds": 7.35, "prob": 0.135}, {"name": "Germany", "avgOdds": 8.82, "prob": 0.1125}, {"name": "Spain", "avgOdds": 9.8, "prob": 0.1012}, {"name": "Portugal", "avgOdds": 11.76, "prob": 0.0843}, {"name": "Netherlands", "avgOdds": 13.72, "prob": 0.0723}, {"name": "Italy", "avgOdds": 17.64, "prob": 0.0563}, {"name": "Belgium", "avgOdds": 20.58, "prob": 0.0482}]}, {"date": "2026-05-07", "teams": [{"name": "Brazil", "avgOdds": 5.45, "prob": 0.1829}, {"name": "France", "avgOdds": 5.94, "prob": 0.1677}, {"name": "Argentina", "avgOdds": 6.93, "prob": 0.1437}, {"name": "England", "avgOdds": 7.42, "prob": 0.1341}, {"name": "Germany", "avgOdds": 8.91, "prob": 0.1118}, {"name": "Spain", "avgOdds": 9.9, "prob": 0.1006}, {"name": "Portugal", "avgOdds": 11.88, "prob": 0.0838}, {"name": "Netherlands", "avgOdds": 13.86, "prob": 0.0719}, {"name": "Italy", "avgOdds": 17.82, "prob": 0.0559}, {"name": "Belgium", "avgOdds": 20.79, "prob": 0.0479}]}]};
+
+function loadOddsData() {
+  return Promise.resolve(ODDS_DATA);
 }
 
-async function loadScheduleData() {
-  try {
-    const resp = await fetch('./data/schedule.json');
-    if (!resp.ok) throw new Error('赛程数据未就绪');
-    return await resp.json();
-  } catch (e) {
-    console.warn('无法加载赛程数据', e);
-    return null;
-  }
-}
-
-function getDefaultOddsData() {
-  return {
-    updated: '2026-05-14',
-    teams: [
-      { name: 'Brazil',     avgOdds: 5.50,  modelProb: 0.18, sources: 3 },
-      { name: 'France',     avgOdds: 6.00,  modelProb: 0.16, sources: 3 },
-      { name: 'Argentina',  avgOdds: 7.00,  modelProb: 0.14, sources: 3 },
-      { name: 'England',    avgOdds: 7.50,  modelProb: 0.13, sources: 3 },
-      { name: 'Germany',    avgOdds: 9.00,  modelProb: 0.11, sources: 3 },
-      { name: 'Spain',      avgOdds: 10.00, modelProb: 0.10, sources: 3 },
-      { name: 'Portugal',   avgOdds: 12.00, modelProb: 0.08, sources: 2 },
-      { name: 'Netherlands', avgOdds: 14.00, modelProb: 0.07, sources: 2 },
-      { name: 'Italy',      avgOdds: 18.00, modelProb: 0.05, sources: 2 },
-      { name: 'Belgium',    avgOdds: 21.00, modelProb: 0.04, sources: 2 },
-      { name: 'Croatia',    avgOdds: 28.00, modelProb: 0.03, sources: 2 },
-      { name: 'Uruguay',    avgOdds: 35.00, modelProb: 0.02, sources: 2 },
-      { name: 'Denmark',    avgOdds: 38.00, modelProb: 0.02, sources: 2 },
-      { name: 'Mexico',     avgOdds: 40.00, modelProb: 0.02, sources: 2 },
-      { name: 'USA',        avgOdds: 45.00, modelProb: 0.02, sources: 2 },
-      { name: 'Japan',      avgOdds: 50.00, modelProb: 0.015, sources: 2 },
-      { name: 'Morocco',    avgOdds: 60.00, modelProb: 0.01, sources: 1 },
-      { name: 'South Korea', avgOdds: 80.00, modelProb: 0.008, sources: 1 },
-      { name: 'Canada',     avgOdds: 100.00, modelProb: 0.005, sources: 1 },
-      { name: 'Australia',  avgOdds: 120.00, modelProb: 0.004, sources: 1 },
-    ],
-    history: []
-  };
-}
-
-// ========== 概率计算 ==========
-function computeComposite(team, allTeams) {
-  const oddsProb = 1 / team.avgOdds;
-  return oddsProb * 0.6 + (team.modelProb || 0) * 0.4;
+function computeComposite(t, allTeams) {
+  // 综合赔率概率和模型概率
+  const oddsProb = 1 / t.avgOdds;
+  const totalOddsProb = allTeams.reduce((s, x) => s + 1 / x.avgOdds, 0);
+  const oddsNorm = oddsProb / totalOddsProb;
+  const modelNorm = t.modelProb || 0;
+  return oddsNorm * 0.6 + modelNorm * 0.4;
 }
 
 function normalizeProbs(teams) {
@@ -157,7 +115,7 @@ function renderCards(teams) {
           <div class="name">${cnName} (${team.name})</div>
           <div class="stats-row">
             <span>赔率 ${team.avgOdds.toFixed(1)}</span>
-            <span>数据源 ${team.sources}</span>
+            <span>数据源 ${Array.isArray(team.sources) ? team.sources.join(' · ') : team.sources}</span>
           </div>
         </div>
         <div class="prob-bar">
@@ -241,12 +199,16 @@ const STAGE_CN = {
 
 function renderSchedule() {
   loadScheduleData().then(data => {
-    if (!data || !data.groups) {
-      document.getElementById('groupsGrid').innerHTML = '<p class="placeholder-text">赛程数据加载中...</p>';
+    console.log('renderSchedule called, data:', data);
+    const groupsGrid = document.getElementById('groupsGrid');
+    if (!groupsGrid) {
+      console.error('groupsGrid not found!');
       return;
     }
-
-    const groupsGrid = document.getElementById('groupsGrid');
+    if (!data || !data.groups) {
+      groupsGrid.innerHTML = '<p class="placeholder-text">赛程数据加载中...</p>';
+      return;
+    }
     groupsGrid.innerHTML = data.groups.map(g => {
       const teamsHtml = g.teams.map((t, idx) => {
         const flag = FLAGS[t] || '🏳️';
@@ -258,6 +220,7 @@ function renderSchedule() {
 
     const ko = data.knockout || {};
     const knockoutInfo = document.getElementById('knockoutInfo');
+    if (!knockoutInfo) { return; }
     knockoutInfo.innerHTML = Object.entries(ko).map(([key, date]) => {
       const name = STAGE_CN[key] || key;
       return `<div class="stage"><span class="stage-name">${name}</span><span class="stage-date">${date}</span></div>`;
@@ -430,6 +393,240 @@ function renderPredictions() {
   });
 }
 
+// ========== 趋势折线图 ==========
+let trendChart = null;
+
+function renderTrendChart(rawData, currentTeams) {
+  const history = rawData.history || [];
+  if (history.length < 2 || !currentTeams) {
+    const el = document.getElementById('trendContainer');
+    if (el) el.innerHTML = '<p class="placeholder-text">趋势数据将在多次更新后呈现 📈</p>';
+    return;
+  }
+
+  const ctx = document.getElementById('trendChart');
+  if (!ctx) return;
+
+  // 热门球队（当前赔率前6）
+  const topTeams = currentTeams.slice(0, 6).map(t => t.name);
+  
+  // 日期标签
+  const dates = history.map(h => h.date);
+  // 加上当前日期
+  dates.push(rawData.updated.split(' ')[0]);
+
+  // 为每个热门球队准备数据
+  const datasets = topTeams.map((name, idx) => {
+    // 历史概率
+    const histProbs = history.map(h => {
+      const found = h.teams.find(t => t.name === name);
+      return found ? +(found.prob * 100).toFixed(1) : null;
+    }).filter(v => v !== null);
+    
+    // 当前概率（从 normalize 后的 currentTeams 取）
+    const current = currentTeams.find(t => t.name === name);
+    const allProbs = [...histProbs, current ? +(current.prob * 100).toFixed(1) : null].filter(v => v !== null);
+
+    // 颜色
+    const colors = ['#f59e0b','#3b82f6','#ef4444','#22c55e','#a855f7','#ec4899'];
+    
+    return {
+      label: CN_NAMES[name] || name,
+      data: allProbs,
+      borderColor: colors[idx % colors.length],
+      backgroundColor: colors[idx % colors.length] + '20',
+      borderWidth: 2,
+      pointRadius: 4,
+      tension: 0.3,
+    };
+  });
+
+  // 用最新数据的日期范围
+  const labels = dates.slice(-(history.length + 1));
+
+  if (trendChart) trendChart.destroy();
+
+  trendChart = new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { 
+          labels: { color: '#e2e8f0', font: { size: 11 } }
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y}%`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: '#334155' },
+          ticks: { color: '#94a3b8' }
+        },
+        y: {
+          grid: { color: '#334155' },
+          ticks: { color: '#94a3b8', callback: v => v + '%' },
+          beginAtZero: false
+        }
+      }
+    }
+  });
+
+  document.getElementById('trendContainer').querySelector('.placeholder-text')?.remove();
+}
+
+
+// ========== 淘汰赛对阵图 ==========
+function renderBracket() {
+  const container = document.getElementById('bracketContainer');
+  if (!container) return;
+  
+  const data = BRACKET_DATA;
+  if (!data || !data.round32) {
+    container.innerHTML = '<p class="placeholder-text">对阵数据加载中...</p>';
+    return;
+  }
+
+  const rounds = [
+    { key: 'round32', label: '🎯 32强' },
+    { key: 'round16', label: '🏃 16强' },
+    { key: 'quarter', label: '⚔️ 八强' },
+    { key: 'semi', label: '🏅 四强' },
+  ];
+
+  let html = '';
+  
+  // 每轮单独渲染
+  for (const r of rounds) {
+    const matches = data[r.key] || [];
+    if (matches.length === 0) continue;
+    
+    html += `<div class="bracket-round"><h3>${r.label}</h3><div class="bracket-matches">`;
+    
+    for (const m of matches) {
+      const t1 = m.team1 || 'TBD';
+      const t2 = m.team2 || 'TBD';
+      const f1 = FLAGS[t1] || '🏳️';
+      const f2 = FLAGS[t2] || '🏳️';
+      const c1 = CN_NAMES[t1] || t1;
+      const c2 = CN_NAMES[t2] || t2;
+      const winner = m.winner;
+      
+      html += '<div class="bracket-match">';
+      
+      // Team 1
+      html += `<div class="bracket-team ${winner === t1 ? 'bracket-winner' : ''}">
+        <span class="bracket-flag">${f1}</span>
+        <span class="bracket-name">${c1}</span>
+      </div>`;
+      
+      // VS
+      html += '<div class="bracket-vs">VS</div>';
+      
+      // Team 2
+      html += `<div class="bracket-team ${winner === t2 ? 'bracket-winner' : ''}">
+        <span class="bracket-flag">${f2}</span>
+        <span class="bracket-name">${c2}</span>
+      </div>`;
+      
+      // 比分（暂无）
+      html += '<div class="bracket-score">—</div>';
+      
+      html += '</div>';
+    }
+    
+    html += '</div></div>';
+  }
+  
+  // 决赛
+  if (data.final) {
+    const f = data.final;
+    html += '<div class="bracket-round bracket-final-round"><h3>🏆 决赛</h3><div class="bracket-matches">';
+    html += '<div class="bracket-match bracket-final">';
+    html += `<div class="bracket-team ${f.winner === f.team1 ? 'bracket-winner' : ''}">
+      <span class="bracket-flag">${FLAGS[f.team1] || '🏳️'}</span>
+      <span class="bracket-name">${CN_NAMES[f.team1] || f.team1}</span>
+    </div>`;
+    html += '<div class="bracket-vs">VS</div>';
+    html += `<div class="bracket-team ${f.winner === f.team2 ? 'bracket-winner' : ''}">
+      <span class="bracket-flag">${FLAGS[f.team2] || '🏳️'}</span>
+      <span class="bracket-name">${CN_NAMES[f.team2] || f.team2}</span>
+    </div>`;
+    html += '</div></div></div>';
+  }
+  
+  container.innerHTML = html;
+  container.querySelector('.placeholder-text')?.remove();
+}
+
+
+// ========== 球员赔率（金靴 + 金球） ==========
+function renderPlayers() {
+  const players = PLAYER_DATA;
+  if (!players) return;
+
+  // 渲染金靴
+  const bootList = document.getElementById('goldenBootList');
+  if (bootList) {
+    bootList.innerHTML = players.goldenBoot.map((p, i) => {
+      const flag = FLAGS[p.country] || '🏳️';
+      const oddsProb = (1 / p.avgOdds * 100).toFixed(1);
+      return `
+        <div class="player-card">
+          <div class="player-rank">${i + 1}</div>
+          <div class="player-flag">${flag}</div>
+          <div class="player-info">
+            <span class="player-name">${p.name}</span>
+            <span class="player-country">${CN_NAMES[p.country] || p.country}</span>
+          </div>
+          <div class="player-odds">赔率 ${p.avgOdds.toFixed(1)}</div>
+          <div class="player-prob-bar">
+            <div class="player-bar-bg">
+              <div class="player-bar-fill" style="width: ${oddsProb}%"></div>
+            </div>
+            <span class="player-prob-text">${oddsProb}%</span>
+          </div>
+          <div class="player-sources">${p.sources.join(' · ')}</div>
+          <div class="player-reason">${p.reason}</div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // 渲染金球
+  const ballList = document.getElementById('goldenBallList');
+  if (ballList) {
+    ballList.innerHTML = players.goldenBall.map((p, i) => {
+      const flag = FLAGS[p.country] || '🏳️';
+      const oddsProb = (1 / p.avgOdds * 100).toFixed(1);
+      return `
+        <div class="player-card">
+          <div class="player-rank">${i + 1}</div>
+          <div class="player-flag">${flag}</div>
+          <div class="player-info">
+            <span class="player-name">${p.name}</span>
+            <span class="player-country">${CN_NAMES[p.country] || p.country}</span>
+          </div>
+          <div class="player-odds">赔率 ${p.avgOdds.toFixed(1)}</div>
+          <div class="player-prob-bar">
+            <div class="player-bar-bg">
+              <div class="player-bar-fill player-ball-fill" style="width: ${oddsProb}%"></div>
+            </div>
+            <span class="player-prob-text">${oddsProb}%</span>
+          </div>
+          <div class="player-sources">${p.sources.join(' · ')}</div>
+          <div class="player-reason">${p.reason}</div>
+        </div>
+      `;
+    }).join('');
+  }
+}
+
 // ========== 更新徽标 ==========
 function updateBadge(updated) {
   const el = document.getElementById('updateBadge');
@@ -446,8 +643,39 @@ async function main() {
   updateBadge(rawData.updated || '未知');
   renderCards(teams);
   renderBarChart(teams);
+  // renderTrendChart(rawData, teams); // 暂时禁用
+  
+  // 预渲染赛程和预测（不依赖 Tab 切换）
+  renderSchedule();
+  renderPredictions();
+  renderBracket();
+  renderPlayers();
 
   document.getElementById('sortSelect').addEventListener('change', () => renderCards(teams));
 }
 
-document.addEventListener('DOMContentLoaded', main);
+document.addEventListener('DOMContentLoaded', () => {
+  // 在页面显示错误，方便调试
+  window.onerror = function(msg, url, line) {
+    const errDiv = document.createElement('div');
+    errDiv.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#ef4444;color:#fff;padding:0.5rem;font-size:0.8rem;z-index:9999';
+    errDiv.textContent = `JS错误: ${msg} (${line}:${url})`;
+    document.body.appendChild(errDiv);
+    return false;
+  };
+  try {
+    main();
+  } catch(e) {
+    const errDiv = document.createElement('div');
+    errDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#ef4444;color:#fff;padding:1rem;font-size:0.9rem;z-index:9999';
+    errDiv.textContent = `初始化错误: ${e.message}\n${e.stack}`;
+    document.body.appendChild(errDiv);
+  }
+});
+const BRACKET_DATA = {"round32": [{"match": 1, "team1": "Brazil", "team2": "Peru"}, {"match": 2, "team1": "Argentina", "team2": "Iran"}, {"match": 3, "team1": "Germany", "team2": "Ecuador"}, {"match": 4, "team1": "Portugal", "team2": "Canada"}, {"match": 5, "team1": "Italy", "team2": "Nigeria"}, {"match": 6, "team1": "Croatia", "team2": "Switzerland"}, {"match": 7, "team1": "Denmark", "team2": "Poland"}, {"match": 8, "team1": "USA", "team2": "Morocco"}, {"match": 9, "team1": "France", "team2": "Norway"}, {"match": 10, "team1": "England", "team2": "Chile"}, {"match": 11, "team1": "Spain", "team2": "Colombia"}, {"match": 12, "team1": "Netherlands", "team2": "Australia"}, {"match": 13, "team1": "Belgium", "team2": "Sweden"}, {"match": 14, "team1": "Uruguay", "team2": "Senegal"}, {"match": 15, "team1": "Mexico", "team2": "South Korea"}, {"match": 16, "team1": "Japan", "team2": "Serbia"}], "round16": [], "quarter": [], "semi": [], "final": {"team1": "TBD", "team2": "TBD", "winner": "TBD"}};
+
+
+
+const PLAYER_DATA = {"updated": "2026-05-14", "goldenBoot": [{"name": "Kylian Mbappé", "country": "France", "avgOdds": 6.0}, {"name": "Erling Haaland", "country": "Norway", "avgOdds": 8.0}, {"name": "Harry Kane", "country": "England", "avgOdds": 10.0}, {"name": "Lionel Messi", "country": "Argentina", "avgOdds": 11.0}, {"name": "Vinicius Jr", "country": "Brazil", "avgOdds": 12.0}, {"name": "Ousmane Dembélé", "country": "France", "avgOdds": 18.0}, {"name": "Lautaro Martínez", "country": "Argentina", "avgOdds": 20.0}, {"name": "Alexander Isak", "country": "Sweden", "avgOdds": 25.0}], "goldenBall": [{"name": "Lionel Messi", "country": "Argentina", "avgOdds": 7.0}, {"name": "Kylian Mbappé", "country": "France", "avgOdds": 9.0}, {"name": "Erling Haaland", "country": "Norway", "avgOdds": 11.0}, {"name": "Vinicius Jr", "country": "Brazil", "avgOdds": 13.0}, {"name": "Jude Bellingham", "country": "England", "avgOdds": 15.0}, {"name": "Rodri", "country": "Spain", "avgOdds": 18.0}]};
+
+

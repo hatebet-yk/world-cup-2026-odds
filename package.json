@@ -1,0 +1,26 @@
+{
+  "name": "world-cup-dashboard",
+  "version": "1.0.0",
+  "description": "> 数据综合自主流博彩赔率，每周自动更新",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hatebet-yk/world-cup-2026-odds.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hatebet-yk/world-cup-2026-odds/issues"
+  },
+  "homepage": "https://github.com/hatebet-yk/world-cup-2026-odds#readme",
+  "dependencies": {
+    "jsdom": "^29.1.1"
+  }
+}

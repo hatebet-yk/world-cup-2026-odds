@@ -1,0 +1,77 @@
+{
+  "updated": "2026-05-14",
+  "goldenBoot": [
+    {
+      "name": "Kylian Mbappé",
+      "country": "France",
+      "avgOdds": 6.0
+    },
+    {
+      "name": "Erling Haaland",
+      "country": "Norway",
+      "avgOdds": 8.0
+    },
+    {
+      "name": "Harry Kane",
+      "country": "England",
+      "avgOdds": 10.0
+    },
+    {
+      "name": "Lionel Messi",
+      "country": "Argentina",
+      "avgOdds": 11.0
+    },
+    {
+      "name": "Vinicius Jr",
+      "country": "Brazil",
+      "avgOdds": 12.0
+    },
+    {
+      "name": "Ousmane Dembélé",
+      "country": "France",
+      "avgOdds": 18.0
+    },
+    {
+      "name": "Lautaro Martínez",
+      "country": "Argentina",
+      "avgOdds": 20.0
+    },
+    {
+      "name": "Alexander Isak",
+      "country": "Sweden",
+      "avgOdds": 25.0
+    }
+  ],
+  "goldenBall": [
+    {
+      "name": "Lionel Messi",
+      "country": "Argentina",
+      "avgOdds": 7.0
+    },
+    {
+      "name": "Kylian Mbappé",
+      "country": "France",
+      "avgOdds": 9.0
+    },
+    {
+      "name": "Erling Haaland",
+      "country": "Norway",
+      "avgOdds": 11.0
+    },
+    {
+      "name": "Vinicius Jr",
+      "country": "Brazil",
+      "avgOdds": 13.0
+    },
+    {
+      "name": "Jude Bellingham",
+      "country": "England",
+      "avgOdds": 15.0
+    },
+    {
+      "name": "Rodri",
+      "country": "Spain",
+      "avgOdds": 18.0
+    }
+  ]
+}
