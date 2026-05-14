@@ -147,30 +147,6 @@ $id('sortSelect').onchange = function() {
   if (tc) tc.textContent = '共 ' + s.length + ' 支球队';
 };
 
-// ===== Bar chart =====
-(function() {
-  var cv = $id('barChart');
-  if (!cv) return;
-  var top = teams.slice(0, 16);
-  var labels = [], data = [], colors = [];
-  for (var i = 0; i < top.length; i++) {
-    labels.push(cn(top[i].name));
-    data.push(+(top[i].prob * 100).toFixed(1));
-    colors.push(i === 0 ? '#f59e0b' : i === 1 ? '#94a3b8' : i === 2 ? '#cd7f32' : '#3b82f6');
-  }
-  new Chart(cv.getContext('2d'), {
-    type: 'bar',
-    data: {labels: labels, datasets: [{label: '夺冠概率 (%)', data: data, backgroundColor: colors, borderRadius: 6}]},
-    options: {
-      indexAxis: 'y', responsive: true, maintainAspectRatio: true,
-      plugins: {legend: {display: false}, tooltip: {callbacks: {label: function(ctx){return ctx.parsed.x + '%';}}}},
-      scales: {
-        x: {grid: {color: '#334155'}, ticks: {color: '#94a3b8', callback: function(v){return v + '%';}}},
-        y: {grid: {display: false}, ticks: {color: '#e2e8f0', font: {size: 12}}}
-      }
-    }
-  });
-})();
 
 // ===== Schedule =====
 (function() {
@@ -385,6 +361,31 @@ window.onerror = function(msg, url, line) {
     var el2 = document.getElementById('updateBadge');
     if (el2) el2.textContent = 'ERROR: ' + e.message;
 }
+
+// ===== Bar chart =====
+(function() {
+  var cv = $id('barChart');
+  if (!cv) return;
+  var top = teams.slice(0, 16);
+  var labels = [], data = [], colors = [];
+  for (var i = 0; i < top.length; i++) {
+    labels.push(cn(top[i].name));
+    data.push(+(top[i].prob * 100).toFixed(1));
+    colors.push(i === 0 ? '#f59e0b' : i === 1 ? '#94a3b8' : i === 2 ? '#cd7f32' : '#3b82f6');
+  }
+  new Chart(cv.getContext('2d'), {
+    type: 'bar',
+    data: {labels: labels, datasets: [{label: '夺冠概率 (%)', data: data, backgroundColor: colors, borderRadius: 6}]},
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: true,
+      plugins: {legend: {display: false}, tooltip: {callbacks: {label: function(ctx){return ctx.parsed.x + '%';}}}},
+      scales: {
+        x: {grid: {color: '#334155'}, ticks: {color: '#94a3b8', callback: function(v){return v + '%';}}},
+        y: {grid: {display: false}, ticks: {color: '#e2e8f0', font: {size: 12}}}
+      }
+    }
+  });
+})();
 </script>
 >
 </body>
