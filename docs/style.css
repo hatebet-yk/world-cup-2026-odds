@@ -1,0 +1,240 @@
+/* ========== Reset & Base ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --accent: #3b82f6;
+  --accent-light: #60a5fa;
+  --gold: #f59e0b;
+  --silver: #94a3b8;
+  --bronze: #cd7f32;
+  --text: #e2e8f0;
+  --text-dim: #94a3b8;
+  --border: #334155;
+  --rank-1: #f59e0b;
+  --rank-2: #94a3b8;
+  --rank-3: #cd7f32;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ========== Header ========== */
+header {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  color: var(--text-dim);
+  margin-top: 0.4rem;
+  font-size: 1rem;
+}
+
+.update-badge {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  background: var(--card-bg);
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+}
+
+/* ========== Main ========== */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+/* ========== Controls ========== */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.controls select {
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.team-count {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+/* ========== Ranking Grid ========== */
+.ranking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 0.75rem;
+}
+
+.team-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: default;
+}
+
+.team-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.team-card .rank {
+  font-size: 1.25rem;
+  font-weight: 800;
+  width: 2rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.rank-1 { color: var(--rank-1); }
+.rank-2 { color: var(--rank-2); }
+.rank-3 { color: var(--rank-3); }
+
+.team-card .flag {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 2.2rem;
+  text-align: center;
+}
+
+.team-card .info {
+  flex: 1;
+  min-width: 0;
+}
+
+.team-card .name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.team-card .stats-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.team-card .prob-bar {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.team-card .bar-bg {
+  height: 8px;
+  background: var(--bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.team-card .bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  transition: width 0.6s ease;
+}
+
+.team-card .prob-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  min-width: 3.2rem;
+  text-align: right;
+}
+
+/* ========== Chart Section ========== */
+#chartSection {
+  margin-top: 2.5rem;
+}
+
+#chartSection h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+#barChart {
+  max-height: 500px;
+}
+
+/* ========== Trend Section ========== */
+#trendSection {
+  margin-top: 2.5rem;
+}
+
+#trendSection h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-note {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.placeholder-text {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-dim);
+  font-size: 1.1rem;
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+
+footer p + p {
+  margin-top: 0.3rem;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
+  header h1 { font-size: 1.5rem; }
+  .ranking-grid { grid-template-columns: 1fr; }
+  .team-card .prob-bar { width: 60px; }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026世界杯夺冠概率排行榜</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🏆 2026 世界杯夺冠概率排行榜</h1>
+    <p class="subtitle">数据综合自主流博彩赔率 · 每周更新</p>
+    <p class="update-badge" id="updateBadge">更新于：加载中...</p>
+  </header>
+
+  <main>
+    <!-- 排名卡片区 -->
+    <section id="rankingSection">
+      <div class="controls">
+        <label for="sortSelect">排序方式：</label>
+        <select id="sortSelect">
+          <option value="composite">综合概率 ↓</option>
+          <option value="odds">赔率系数 ↓</option>
+          <option value="name">国家名称 ↑</option>
+        </select>
+        <span class="team-count" id="teamCount">共 0 支球队</span>
+      </div>
+      <div class="ranking-grid" id="rankingGrid">
+        <!-- 由 JavaScript 渲染 -->
+      </div>
+    </section>
+
+    <!-- 图表区 -->
+    <section id="chartSection">
+      <h2>夺冠概率排行柱状图</h2>
+      <canvas id="barChart"></canvas>
+    </section>
+
+    <section id="trendSection">
+      <h2>热门球队夺冠概率趋势</h2>
+      <p class="section-note">每周更新一次，展示变化趋势</p>
+      <div id="trendContainer">
+        <p class="placeholder-text">趋势数据将在多次更新后呈现 📈</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>数据来源：Bet365 · William Hill · DraftKings 等主流博彩平台</p>
+    <p>⚠️ 概率仅供参考，不构成投注建议</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

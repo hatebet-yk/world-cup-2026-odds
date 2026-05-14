@@ -1,0 +1,295 @@
+{
+  "updated": "2026-05-14 23:58 (CST)",
+  "note": "数据来源：The Odds API 综合多家博彩平台赔率",
+  "teams": [
+    {
+      "name": "Brazil",
+      "avgOdds": 5.5,
+      "modelProb": 0.1818,
+      "sources": 3
+    },
+    {
+      "name": "France",
+      "avgOdds": 6.0,
+      "modelProb": 0.1667,
+      "sources": 3
+    },
+    {
+      "name": "Argentina",
+      "avgOdds": 7.0,
+      "modelProb": 0.1429,
+      "sources": 3
+    },
+    {
+      "name": "England",
+      "avgOdds": 7.5,
+      "modelProb": 0.1333,
+      "sources": 3
+    },
+    {
+      "name": "Germany",
+      "avgOdds": 9.0,
+      "modelProb": 0.1111,
+      "sources": 3
+    },
+    {
+      "name": "Spain",
+      "avgOdds": 10.0,
+      "modelProb": 0.1,
+      "sources": 3
+    },
+    {
+      "name": "Portugal",
+      "avgOdds": 12.0,
+      "modelProb": 0.0833,
+      "sources": 3
+    },
+    {
+      "name": "Netherlands",
+      "avgOdds": 14.0,
+      "modelProb": 0.0714,
+      "sources": 3
+    },
+    {
+      "name": "Italy",
+      "avgOdds": 18.0,
+      "modelProb": 0.0556,
+      "sources": 3
+    },
+    {
+      "name": "Belgium",
+      "avgOdds": 21.0,
+      "modelProb": 0.0476,
+      "sources": 2
+    },
+    {
+      "name": "Croatia",
+      "avgOdds": 28.0,
+      "modelProb": 0.0357,
+      "sources": 2
+    },
+    {
+      "name": "Uruguay",
+      "avgOdds": 35.0,
+      "modelProb": 0.0286,
+      "sources": 2
+    },
+    {
+      "name": "Denmark",
+      "avgOdds": 38.0,
+      "modelProb": 0.0263,
+      "sources": 2
+    },
+    {
+      "name": "Mexico",
+      "avgOdds": 40.0,
+      "modelProb": 0.025,
+      "sources": 2
+    },
+    {
+      "name": "USA",
+      "avgOdds": 45.0,
+      "modelProb": 0.0222,
+      "sources": 2
+    },
+    {
+      "name": "Japan",
+      "avgOdds": 50.0,
+      "modelProb": 0.02,
+      "sources": 2
+    },
+    {
+      "name": "Morocco",
+      "avgOdds": 60.0,
+      "modelProb": 0.0167,
+      "sources": 2
+    },
+    {
+      "name": "Serbia",
+      "avgOdds": 65.0,
+      "modelProb": 0.0154,
+      "sources": 1
+    },
+    {
+      "name": "Poland",
+      "avgOdds": 70.0,
+      "modelProb": 0.0143,
+      "sources": 1
+    },
+    {
+      "name": "South Korea",
+      "avgOdds": 80.0,
+      "modelProb": 0.0125,
+      "sources": 1
+    },
+    {
+      "name": "Switzerland",
+      "avgOdds": 80.0,
+      "modelProb": 0.0125,
+      "sources": 1
+    },
+    {
+      "name": "Senegal",
+      "avgOdds": 85.0,
+      "modelProb": 0.0118,
+      "sources": 1
+    },
+    {
+      "name": "Nigeria",
+      "avgOdds": 90.0,
+      "modelProb": 0.0111,
+      "sources": 1
+    },
+    {
+      "name": "Sweden",
+      "avgOdds": 95.0,
+      "modelProb": 0.0105,
+      "sources": 1
+    },
+    {
+      "name": "Canada",
+      "avgOdds": 100.0,
+      "modelProb": 0.01,
+      "sources": 1
+    },
+    {
+      "name": "Australia",
+      "avgOdds": 120.0,
+      "modelProb": 0.0083,
+      "sources": 1
+    },
+    {
+      "name": "Ecuador",
+      "avgOdds": 130.0,
+      "modelProb": 0.0077,
+      "sources": 1
+    },
+    {
+      "name": "Colombia",
+      "avgOdds": 140.0,
+      "modelProb": 0.0071,
+      "sources": 1
+    },
+    {
+      "name": "Iran",
+      "avgOdds": 150.0,
+      "modelProb": 0.0067,
+      "sources": 1
+    },
+    {
+      "name": "Chile",
+      "avgOdds": 160.0,
+      "modelProb": 0.0063,
+      "sources": 1
+    },
+    {
+      "name": "Peru",
+      "avgOdds": 170.0,
+      "modelProb": 0.0059,
+      "sources": 1
+    },
+    {
+      "name": "Norway",
+      "avgOdds": 180.0,
+      "modelProb": 0.0056,
+      "sources": 1
+    },
+    {
+      "name": "Cameroon",
+      "avgOdds": 200.0,
+      "modelProb": 0.005,
+      "sources": 1
+    },
+    {
+      "name": "New Zealand",
+      "avgOdds": 250.0,
+      "modelProb": 0.004,
+      "sources": 1
+    },
+    {
+      "name": "Algeria",
+      "avgOdds": 300.0,
+      "modelProb": 0.0033,
+      "sources": 1
+    },
+    {
+      "name": "Saudi Arabia",
+      "avgOdds": 350.0,
+      "modelProb": 0.0029,
+      "sources": 1
+    },
+    {
+      "name": "Costa Rica",
+      "avgOdds": 400.0,
+      "modelProb": 0.0025,
+      "sources": 1
+    },
+    {
+      "name": "Ghana",
+      "avgOdds": 450.0,
+      "modelProb": 0.0022,
+      "sources": 1
+    },
+    {
+      "name": "Egypt",
+      "avgOdds": 500.0,
+      "modelProb": 0.002,
+      "sources": 1
+    },
+    {
+      "name": "Ivory Coast",
+      "avgOdds": 500.0,
+      "modelProb": 0.002,
+      "sources": 1
+    },
+    {
+      "name": "Qatar",
+      "avgOdds": 600.0,
+      "modelProb": 0.0017,
+      "sources": 1
+    },
+    {
+      "name": "Panama",
+      "avgOdds": 700.0,
+      "modelProb": 0.0014,
+      "sources": 1
+    },
+    {
+      "name": "Jamaica",
+      "avgOdds": 800.0,
+      "modelProb": 0.0013,
+      "sources": 1
+    },
+    {
+      "name": "Paraguay",
+      "avgOdds": 900.0,
+      "modelProb": 0.0011,
+      "sources": 1
+    },
+    {
+      "name": "Venezuela",
+      "avgOdds": 1000.0,
+      "modelProb": 0.001,
+      "sources": 1
+    },
+    {
+      "name": "Tunisia",
+      "avgOdds": 1000.0,
+      "modelProb": 0.001,
+      "sources": 1
+    },
+    {
+      "name": "South Africa",
+      "avgOdds": 1200.0,
+      "modelProb": 0.0008,
+      "sources": 1
+    },
+    {
+      "name": "Honduras",
+      "avgOdds": 1500.0,
+      "modelProb": 0.0007,
+      "sources": 1
+    }
+  ],
+  "history": []
+}
