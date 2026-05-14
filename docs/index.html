@@ -33,6 +33,23 @@
 <footer><p>数据来源：综合主流博彩平台赔率 | 赛程数据参考官方安排</p><p>⚠️ 概率仅供参考，不构成投注建议</p></footer>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
+// ===== Tab switching =====
+(function() {
+  var btns = document.querySelectorAll('.tab-btn');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].onclick = function() {
+      var all_btns = document.querySelectorAll('.tab-btn');
+      var all_tabs = document.querySelectorAll('.tab-content');
+      for (var j = 0; j < all_btns.length; j++) all_btns[j].classList.remove('active');
+      for (var j = 0; j < all_tabs.length; j++) all_tabs[j].classList.remove('active');
+      this.classList.add('active');
+      var tab = document.getElementById('tab-' + this.getAttribute('data-tab'));
+      if (tab) tab.classList.add('active');
+    };
+  }
+})();
+
+
 // ===== All data FIRST, before any function =====
 var ODDS_DATA = {"updated":"2026-05-14 23:58 (CST)","teams":[{"name":"Brazil","modelProb":0.1818,"avgOdds":5.5,"sources":["Bet365","William Hill","DraftKings"]},{"name":"France","modelProb":0.1667,"avgOdds":6.0,"sources":["Bet365","William Hill","DraftKings"]},{"name":"Argentina","modelProb":0.1429,"avgOdds":7.0,"sources":["Bet365","William Hill","DraftKings"]},{"name":"England","modelProb":0.1333,"avgOdds":7.5,"sources":["Bet365","William Hill","DraftKings"]},{"name":"Germany","modelProb":0.1111,"avgOdds":9.0,"sources":["Bet365","William Hill","DraftKings"]},{"name":"Spain","modelProb":0.1,"avgOdds":10.0,"sources":["Bet365","William Hill","DraftKings"]},{"name":"Portugal","modelProb":0.0833,"avgOdds":12.0,"sources":["Bet365","William Hill","DraftKings"]},{"name":"Netherlands","modelProb":0.0714,"avgOdds":14.0,"sources":["Bet365","William Hill","DraftKings"]},{"name":"Italy","modelProb":0.0556,"avgOdds":18.0,"sources":["Bet365","William Hill","DraftKings"]},{"name":"Belgium","modelProb":0.0476,"avgOdds":21.0,"sources":["Bet365","William Hill"]},{"name":"Croatia","modelProb":0.0357,"avgOdds":28.0,"sources":["Bet365","William Hill"]},{"name":"Uruguay","modelProb":0.0286,"avgOdds":35.0,"sources":["Bet365","William Hill"]},{"name":"Denmark","modelProb":0.0263,"avgOdds":38.0,"sources":["Bet365","William Hill"]},{"name":"Mexico","modelProb":0.025,"avgOdds":40.0,"sources":["Bet365","William Hill"]},{"name":"USA","modelProb":0.0222,"avgOdds":45.0,"sources":["Bet365","William Hill"]},{"name":"Japan","modelProb":0.02,"avgOdds":50.0,"sources":["Bet365","William Hill"]},{"name":"Morocco","modelProb":0.0167,"avgOdds":60.0,"sources":["Bet365","William Hill"]},{"name":"Serbia","modelProb":0.0154,"avgOdds":65.0,"sources":["Bet365"]},{"name":"Poland","modelProb":0.0143,"avgOdds":70.0,"sources":["Bet365"]},{"name":"South Korea","modelProb":0.0125,"avgOdds":80.0,"sources":["Bet365"]},{"name":"Switzerland","modelProb":0.0125,"avgOdds":80.0,"sources":["Bet365"]},{"name":"Senegal","modelProb":0.0118,"avgOdds":85.0,"sources":["Bet365"]},{"name":"Nigeria","modelProb":0.0111,"avgOdds":90.0,"sources":["Bet365"]},{"name":"Sweden","modelProb":0.0105,"avgOdds":95.0,"sources":["Bet365"]},{"name":"Canada","modelProb":0.01,"avgOdds":100.0,"sources":["Bet365"]},{"name":"Australia","modelProb":0.0083,"avgOdds":120.0,"sources":["Bet365"]},{"name":"Ecuador","modelProb":0.0077,"avgOdds":130.0,"sources":["Bet365"]},{"name":"Colombia","modelProb":0.0071,"avgOdds":140.0,"sources":["Bet365"]},{"name":"Iran","modelProb":0.0067,"avgOdds":150.0,"sources":["Bet365"]},{"name":"Chile","modelProb":0.0063,"avgOdds":160.0,"sources":["Bet365"]},{"name":"Peru","modelProb":0.0059,"avgOdds":170.0,"sources":["Bet365"]},{"name":"Norway","modelProb":0.0056,"avgOdds":180.0,"sources":["Bet365"]},{"name":"Cameroon","modelProb":0.005,"avgOdds":200.0,"sources":["Bet365"]},{"name":"New Zealand","modelProb":0.004,"avgOdds":250.0,"sources":["Bet365"]},{"name":"Algeria","modelProb":0.0033,"avgOdds":300.0,"sources":["Bet365"]},{"name":"Saudi Arabia","modelProb":0.0029,"avgOdds":350.0,"sources":["Bet365"]},{"name":"Costa Rica","modelProb":0.0025,"avgOdds":400.0,"sources":["Bet365"]},{"name":"Ghana","modelProb":0.0022,"avgOdds":450.0,"sources":["Bet365"]},{"name":"Egypt","modelProb":0.002,"avgOdds":500.0,"sources":["Bet365"]},{"name":"Ivory Coast","modelProb":0.002,"avgOdds":500.0,"sources":["Bet365"]},{"name":"Qatar","modelProb":0.0017,"avgOdds":600.0,"sources":["Bet365"]},{"name":"Panama","modelProb":0.0014,"avgOdds":700.0,"sources":["Bet365"]},{"name":"Jamaica","modelProb":0.0013,"avgOdds":800.0,"sources":["Bet365"]},{"name":"Paraguay","modelProb":0.0011,"avgOdds":900.0,"sources":["Bet365"]},{"name":"Venezuela","modelProb":0.001,"avgOdds":1000.0,"sources":["Bet365"]},{"name":"Tunisia","modelProb":0.001,"avgOdds":1000.0,"sources":["Bet365"]},{"name":"South Africa","modelProb":0.0008,"avgOdds":1200.0,"sources":["Bet365"]},{"name":"Honduras","modelProb":0.0007,"avgOdds":1500.0,"sources":["Bet365"]}],"history":[{"date":"2026-05-01","teams":[{"name":"Brazil","avgOdds":5.39,"prob":0.184},{"name":"France","avgOdds":5.88,"prob":0.1687},{"name":"Argentina","avgOdds":6.86,"prob":0.1446},{"name":"England","avgOdds":7.35,"prob":0.135},{"name":"Germany","avgOdds":8.82,"prob":0.1125},{"name":"Spain","avgOdds":9.8,"prob":0.1012},{"name":"Portugal","avgOdds":11.76,"prob":0.0843},{"name":"Netherlands","avgOdds":13.72,"prob":0.0723},{"name":"Italy","avgOdds":17.64,"prob":0.0563},{"name":"Belgium","avgOdds":20.58,"prob":0.0482}]},{"date":"2026-05-07","teams":[{"name":"Brazil","avgOdds":5.45,"prob":0.1829},{"name":"France","avgOdds":5.94,"prob":0.1677},{"name":"Argentina","avgOdds":6.93,"prob":0.1437},{"name":"England","avgOdds":7.42,"prob":0.1341},{"name":"Germany","avgOdds":8.91,"prob":0.1118},{"name":"Spain","avgOdds":9.9,"prob":0.1006},{"name":"Portugal","avgOdds":11.88,"prob":0.0838},{"name":"Netherlands","avgOdds":13.86,"prob":0.0719},{"name":"Italy","avgOdds":17.82,"prob":0.0559},{"name":"Belgium","avgOdds":20.79,"prob":0.0479}]}]};
 var SCHEDULE_DATA = {"updated":"2026-05-15","groups":[{"group":"A","teams":["Mexico","Canada","USA","New Zealand"]},{"group":"B","teams":["Portugal","Italy","Morocco","Iran"]},{"group":"C","teams":["France","Netherlands","Senegal","Ecuador"]},{"group":"D","teams":["Brazil","Croatia","Nigeria","Australia"]},{"group":"E","teams":["England","Denmark","Algeria","South Korea"]},{"group":"F","teams":["Argentina","Uruguay","Ghana","Saudi Arabia"]},{"group":"G","teams":["Spain","Switzerland","Egypt","Japan"]},{"group":"H","teams":["Germany","Belgium","Cameroon","USA"]},{"group":"I","teams":["Colombia","Sweden","Tunisia","Qatar"]},{"group":"J","teams":["Serbia","Poland","Ivory Coast","Paraguay"]},{"group":"K","teams":["Mexico","Peru","South Africa","Chile"]},{"group":"L","teams":["Ukraine","Norway","Jamaica","Costa Rica"]}],"knockout":{"round32":"2026-06-29 至 2026-07-02","round16":"2026-07-04 至 2026-07-07","quarter":"2026-07-09 至 2026-07-10","semi":"2026-07-14 至 2026-07-15","thirdPlace":"2026-07-18","final":"2026-07-19"}};
@@ -43,17 +60,6 @@ var CN = {'Argentina':'阿根廷','Brazil':'巴西','England':'英格兰','Franc
 var STG = {round32:'32强赛',round16:'16强赛',quarter:'1/4决赛',semi:'半决赛',thirdPlace:'三四名决赛',final:'决赛'};
 
 
-
-// ===== Tab switching =====
-document.querySelectorAll('.tab-btn').forEach(function(btn) {
-  btn.onclick = function() {
-    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-    document.querySelectorAll('.tab-content').forEach(function(t) { t.classList.remove('active'); });
-    this.classList.add('active');
-    var tab = document.getElementById('tab-' + this.dataset.tab);
-    if (tab) tab.classList.add('active');
-  };
-});
 
 // ===== Helper functions =====
 function $id(id) { return document.getElementById(id); }
@@ -365,6 +371,8 @@ window.onerror = function(msg, url, line) {
   var uB = $id('updateBadge');
   if (uB) uB.textContent = '⚠️ 页面错误: ' + msg + ' (第' + line + '行)';
 };
+
 </script>
+>
 </body>
 </html>
