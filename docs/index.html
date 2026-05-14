@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>2026世界杯夺冠概率排行榜</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<header><h1>🏆 2026 世界杯</h1><p class="subtitle">夺冠概率 · 赛程 · 数据综合</p><p class="update-badge" id="updateBadge">加载中...</p></header>
+<header><h1>🏆 2026 世界杯</h1><p class="subtitle">夺冠概率 · 赛程 · 数据综合</p><p class="update-badge" id="updateBadge">加载中... [v2]</p></header>
 <nav class="tabs">
 <button class="tab-btn active" data-tab="odds">📊 夺冠概率</button>
 <button class="tab-btn" data-tab="schedule">📅 赛程分组</button>
@@ -150,7 +150,7 @@ $id('sortSelect').onchange = function() {
   var d = SCHEDULE_DATA;
   var g = $id('groupsGrid');
   if (!g) return;
-  if (!d || !d.groups) { g.innerHTML = '<p class="placeholder-text">赛程数据加载中...</p>'; return; }
+  if (!d || !d.groups) { g.innerHTML = '<p class="placeholder-text">赛程数据加载中... [v2]</p>'; return; }
   var h = '';
   for (var i = 0; i < d.groups.length; i++) {
     var gr = d.groups[i];
@@ -268,7 +268,7 @@ $id('sortSelect').onchange = function() {
   var c = $id('bracketContainer');
   if (!c) return;
   var d = BRACKET_DATA;
-  if (!d || !d.round32) { c.innerHTML = '<p class="placeholder-text">对阵数据加载中...</p>'; return; }
+  if (!d || !d.round32) { c.innerHTML = '<p class="placeholder-text">对阵数据加载中... [v2]</p>'; return; }
   var rounds = [
     {key:'round32', label:'🎯 32强'},
     {key:'round16', label:'🏃 16强'},
