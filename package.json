@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/hatebet-yk/world-cup-2026-odds#readme",
   "dependencies": {
-    "jsdom": "^29.1.1"
+    "puppeteer": "^24.7.2"
   }
 }
