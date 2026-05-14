@@ -33,13 +33,8 @@
 <footer><p>数据来源：综合主流博彩平台赔率 | 赛程数据参考官方安排</p><p>⚠️ 概率仅供参考，不构成投注建议</p></footer>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
-window.onerror = function(msg, url, line, col, err) {
-    var eb = document.getElementById("errorBar"); if (eb) { eb.style.display = "block"; eb.textContent = "❌ " + msg + " (行" + line + ")"; }
-    var el = document.getElementById('updateBadge');
-    if (el) el.textContent = 'JS: ' + (msg || '') + ' (line ' + line + ')';
-};
-try {
-// ORIGINAL CODE
+(function() {
+  try {
 
 // ===== Tab switching =====
 (function() {
@@ -147,6 +142,30 @@ $id('sortSelect').onchange = function() {
   if (tc) tc.textContent = '共 ' + s.length + ' 支球队';
 };
 
+// ===== Bar chart =====
+(function() {
+  var cv = $id('barChart');
+  if (!cv) return;
+  var top = teams.slice(0, 16);
+  var labels = [], data = [], colors = [];
+  for (var i = 0; i < top.length; i++) {
+    labels.push(cn(top[i].name));
+    data.push(+(top[i].prob * 100).toFixed(1));
+    colors.push(i === 0 ? '#f59e0b' : i === 1 ? '#94a3b8' : i === 2 ? '#cd7f32' : '#3b82f6');
+  }
+  new Chart(cv.getContext('2d'), {
+    type: 'bar',
+    data: {labels: labels, datasets: [{label: '夺冠概率 (%)', data: data, backgroundColor: colors, borderRadius: 6}]},
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: true,
+      plugins: {legend: {display: false}, tooltip: {callbacks: {label: function(ctx){return ctx.parsed.x + '%';}}}},
+      scales: {
+        x: {grid: {color: '#334155'}, ticks: {color: '#94a3b8', callback: function(v){return v + '%';}}},
+        y: {grid: {display: false}, ticks: {color: '#e2e8f0', font: {size: 12}}}
+      }
+    }
+  });
+})();
 
 // ===== Schedule =====
 (function() {
@@ -357,48 +376,13 @@ window.onerror = function(msg, url, line) {
 };
 
 
-} catch(e) {
-    var el2 = document.getElementById('updateBadge');
-    if (el2) el2.textContent = 'ERROR: ' + e.message;
-}
+  } catch(globalError) {
+    var el = document.getElementById('updateBadge');
+    if (el) el.innerHTML = '<span style="color:#f87171">❌ ' + globalError.message + '</span>';
+  }
+})();
 
-// ===== Bar chart =====
-(function() {
-  var cv = $id('barChart');
-  if (!cv) return;
-  var top = teams.slice(0, 16);
-  var labels = [], data = [], colors = [];
-  for (var i = 0; i < top.length; i++) {
-    labels.push(cn(top[i].name));
-    data.push(+(top[i].prob * 100).toFixed(1));
-    colors.push(i === 0 ? '#f59e0b' : i === 1 ? '#94a3b8' : i === 2 ? '#cd7f32' : '#3b82f6');
-  }
-  new Chart(cv.getContext('2d'), {
-    type: 'bar',
-    data: {labels: labels, datasets: [{label: '夺冠概率 (%)', data: data, backgroundColor: colors, borderRadius: 6}]},
-    options: {
-      indexAxis: 'y', responsive: true, maintainAspectRatio: true,
-      plugins: {legend: {display: false}, tooltip: {callbacks: {label: function(ctx){return ctx.parsed.x + '%';}}}},
-      scales: {
-        x: {grid: {color: '#334155'}, ticks: {color: '#94a3b8', callback: function(v){return v + '%';}}},
-        y: {grid: {display: false}, ticks: {color: '#e2e8f0', font: {size: 12}}}
-      }
-    }
-  });
-})();
 </script>
-<script>
-(function() {
-  var ub = document.getElementById("updateBadge");
-  if (ub) {
-    var grid = document.getElementById("rankingGrid");
-    if (grid && grid.innerHTML.indexOf("team-card") > 0) {
-      ub.innerHTML = "页面已加载 ✅ | " + ODDS_DATA.updated.split(" ")[0];
-    } else {
-      ub.innerHTML = "渲染异常: " + (grid ? grid.innerHTML.length + "字符" : "null") + " | 看看控制台错误";
-    }
-  }
-})();
-</script>
+>
 </body>
 </html>
