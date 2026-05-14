@@ -387,6 +387,18 @@ window.onerror = function(msg, url, line) {
   });
 })();
 </script>
->
+<script>
+(function() {
+  var ub = document.getElementById("updateBadge");
+  if (ub) {
+    var grid = document.getElementById("rankingGrid");
+    if (grid && grid.innerHTML.indexOf("team-card") > 0) {
+      ub.innerHTML = "页面已加载 ✅ | " + ODDS_DATA.updated.split(" ")[0];
+    } else {
+      ub.innerHTML = "渲染异常: " + (grid ? grid.innerHTML.length + "字符" : "null") + " | 看看控制台错误";
+    }
+  }
+})();
+</script>
 </body>
 </html>
