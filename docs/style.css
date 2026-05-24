@@ -173,9 +173,12 @@ nav.tabs {
   gap: 0;
   border-bottom: 1px solid var(--border);
   padding: 0 1rem;
-  background: rgba(17, 31, 51, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(17, 31, 51, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .tab-btn {
@@ -190,15 +193,28 @@ nav.tabs {
   transition: all 0.15s;
   font-weight: 500;
   letter-spacing: 0.02em;
+  position: relative;
 }
 
 .tab-btn:hover {
   color: var(--text);
+  background: rgba(255,255,255,0.02);
 }
 
 .tab-btn.active {
   color: var(--gold-light);
   border-bottom-color: var(--gold);
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.5;
 }
 
 .tab-content {
@@ -260,69 +276,157 @@ nav.tabs {
 .team-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 8px;
-  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  transition: background 0.15s;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
   cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: rgba(255,255,255,0.06);
+  border-radius: 0 2px 2px 0;
 }
 
 .team-card:hover {
   background: #142842;
+  border-color: rgba(212, 167, 67, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
 
-.team-card .rank {
-  font-size: 1.1rem;
+/* Top 3 cards get gold/silver/bronze accents */
+.team-card.rank-1 {
+  border-color: rgba(212, 167, 67, 0.3);
+  background: linear-gradient(135deg, rgba(212, 167, 67, 0.06), var(--card-bg) 60%);
+}
+.team-card.rank-1::before { background: var(--rank-1); }
+
+.team-card.rank-2 {
+  border-color: rgba(148, 163, 184, 0.25);
+}
+.team-card.rank-2::before { background: var(--rank-2); }
+
+.team-card.rank-3 {
+  border-color: rgba(205, 127, 50, 0.25);
+}
+.team-card.rank-3::before { background: var(--rank-3); }
+
+.rank-wrap {
+  flex-shrink: 0;
+  width: 2rem;
+  text-align: center;
+}
+
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  width: 1.6rem;
-  text-align: center;
-  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  color: var(--text-faint);
+  transition: all 0.2s;
 }
 
-.rank-1 { color: var(--rank-1); }
-.rank-2 { color: var(--rank-2); }
-.rank-3 { color: var(--rank-3); }
+.rank-badge.rank-1 {
+  background: rgba(212, 167, 67, 0.15);
+  color: var(--rank-1);
+  box-shadow: 0 0 12px rgba(212, 167, 67, 0.15);
+}
+.rank-badge.rank-2 {
+  background: rgba(148, 163, 184, 0.12);
+  color: var(--rank-2);
+}
+.rank-badge.rank-3 {
+  background: rgba(205, 127, 50, 0.12);
+  color: var(--rank-3);
+}
 
-.team-card .flag {
-  font-size: 1.6rem;
+.flag-wrap {
   flex-shrink: 0;
-  width: 1.8rem;
-  text-align: center;
+  font-size: 1.8rem;
   line-height: 1;
+  width: 2rem;
+  text-align: center;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
 }
 
-.team-card .info {
+.info-wrap {
   flex: 1;
   min-width: 0;
 }
 
-.team-card .name {
+.team-name {
   font-weight: 600;
   font-size: 0.9rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  color: #fff;
 }
 
-.team-card .stats-row {
+.team-meta {
   display: flex;
-  gap: 1rem;
-  margin-top: 0.15rem;
-  font-size: 0.72rem;
+  gap: 0.5rem;
+  margin-top: 0.1rem;
+  font-size: 0.68rem;
   color: var(--text-faint);
 }
 
-.team-card .prob-bar {
+.prob-wrap {
   width: 80px;
   flex-shrink: 0;
 }
 
-.team-card .bar-bg {
-  height: 5px;
+.prob-bar-bg {
+  height: 6px;
   background: var(--bar-bg);
   border-radius: 3px;
   overflow: hidden;
 }
+
+.prob-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  background: var(--accent);
+}
+
+/* Top 3 probability bars */
+.team-card.rank-1 .prob-bar-fill {
+  background: linear-gradient(90deg, #f59e0b, var(--rank-1)) !important;
+}
+.team-card.rank-2 .prob-bar-fill {
+  background: linear-gradient(90deg, #64748b, var(--rank-2)) !important;
+}
+.team-card.rank-3 .prob-bar-fill {
+  background: linear-gradient(90deg, #a16207, var(--rank-3)) !important;
+}
+
+.prob-val {
+  flex-shrink: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 3.4rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.team-card.rank-1 .prob-val { color: var(--rank-1) !important; }
+.team-card.rank-2 .prob-val { color: var(--rank-2) !important; }
+.team-card.rank-3 .prob-val { color: var(--rank-3) !important; }
 
 .team-card .bar-fill {
   height: 100%;
@@ -331,18 +435,6 @@ nav.tabs {
   transition: width 0.5s ease;
 }
 
-.team-card .prob-value {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--accent-light);
-  min-width: 2.8rem;
-  text-align: right;
-}
-
-.team-card .odds-value {
-  font-size: 0.72rem;
-  color: var(--text-faint);
-}
 
 /* Sources */
 .team-sources {
@@ -356,13 +448,15 @@ nav.tabs {
   margin-top: 2.5rem;
 }
 
-#chartSection h2 {
+#chartSection h2, #trendSection h2 {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--text-dim);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid rgba(212, 167, 67, 0.2);
 }
 
 #barChart, #trendChart {
@@ -384,6 +478,21 @@ nav.tabs {
   color: var(--text-dim);
   letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+
+/* ========== Section Headings ========== */
+#rankingSection h2, #groupSection h2, #knockoutSection h2,
+#qfSection h2, #darkHorseSection h2,
+#bracketSection h2,
+#goldenBootSection h2, #goldenBallSection h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid rgba(212, 167, 67, 0.2);
 }
 
 .section-note {
@@ -845,7 +954,7 @@ footer p + p { margin-top: 0.25rem; }
   html { font-size: 14px; }
   header h1 { font-size: 1.5rem; }
   .ranking-grid { grid-template-columns: 1fr; }
-  .team-card .prob-bar { width: 60px; }
+  .prob-wrap { width: 60px; }
   .groups-grid { grid-template-columns: 1fr; }
   .dh-grid { grid-template-columns: 1fr; }
   .tab-btn { font-size: 0.75rem; padding: 0.7rem 0.8rem; }
