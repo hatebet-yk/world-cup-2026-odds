@@ -85,7 +85,7 @@ body {
 }
 
 
-/* ========== Photo Background with Dark Overlay ========== */
+/* ========== Photo Background ========== */
 #photoBg {
   position: fixed;
   inset: 0;
@@ -96,21 +96,18 @@ body {
   background-position: center 30%;
   background-repeat: no-repeat;
 }
-
 #photoBg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 22, 40, 0.75) 0%,
-    rgba(10, 22, 40, 0.6) 30%,
-    rgba(10, 22, 40, 0.55) 50%,
-    rgba(10, 22, 40, 0.7) 70%,
-    rgba(10, 22, 40, 0.85) 100%
+  background: linear-gradient(180deg,
+    rgba(10,22,40,0.75) 0%,
+    rgba(10,22,40,0.6) 30%,
+    rgba(10,22,40,0.55) 50%,
+    rgba(10,22,40,0.7) 70%,
+    rgba(10,22,40,0.85) 100%
   );
 }
-
 /* ========== Animations ========== */
 @keyframes goldPulse {
   0%, 100% { opacity: 1; filter: brightness(1); }
