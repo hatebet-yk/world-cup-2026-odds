@@ -377,16 +377,9 @@ $id('sortSelect').onchange = function() {
 
 // ===== Error display =====
 window.onerror = function(msg, url, line) {
-  var uB = $id('updateBadge');
-  if (uB) uB.textContent = '⚠️ 页面错误: ' + msg + ' (第' + line + '行)';
+  var uB = $id && $id('updateBadge');
+  if (uB) uB.textContent = '⚠️ 页面错误: ' + (typeof msg === 'string' ? msg : msg + '') + ' (第' + line + '行)';
 };
-
-
-  } catch(globalError) {
-    var el = document.getElementById('updateBadge');
-    if (el) el.innerHTML = '<span style="color:#f87171">❌ ' + globalError.message + '</span>';
-  }
-})();
 
 </script>
 <script>
