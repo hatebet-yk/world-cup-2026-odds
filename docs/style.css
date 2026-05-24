@@ -85,16 +85,30 @@ body {
 }
 
 
-/* ========== Player Silhouettes Background ========== */
-#playerBg {
+/* ========== Photo Background with Dark Overlay ========== */
+#photoBg {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url('player-bg.svg');
+  background-image: url('https://wallpaperaccess.com/full/1094036.jpg');
   background-size: cover;
-  background-position: center;
-  opacity: 0.6;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+
+#photoBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 22, 40, 0.75) 0%,
+    rgba(10, 22, 40, 0.6) 30%,
+    rgba(10, 22, 40, 0.55) 50%,
+    rgba(10, 22, 40, 0.7) 70%,
+    rgba(10, 22, 40, 0.85) 100%
+  );
 }
 
 /* ========== Animations ========== */
