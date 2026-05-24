@@ -53,13 +53,35 @@
   </iframe>
 </div>
 
+<!-- 热门球星浮层 -->
+<div class="star-players" id="starPlayers"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   try {
 
-// ===== Tab switching =====
+// Star players floating panel
+var starPlayers = [
+  {name:'Messi',flag:'🇦🇷',emoji:'🐐'},
+  {name:'Mbappé',flag:'🇫🇷',emoji:'⚡'},
+  {name:'Haaland',flag:'🇳🇴',emoji:'💪'},
+  {name:'Vinicius Jr',flag:'🇧🇷',emoji:'✨'},
+  {name:'Bellingham',flag:'🏴',emoji:'🌟'},
+  {name:'Musiala',flag:'🇩🇪',emoji:'🎯'},
+  {name:'Lautaro',flag:'🇦🇷',emoji:'🔥'},
+  {name:'Rodri',flag:'🇪🇸',emoji:'🧠'},
+];
 (function() {
+  var c = document.getElementById('starPlayers');
+  if (!c) return;
+  var h = '';
+  for (var i = 0; i < starPlayers.length; i++) {
+    var s = starPlayers[i];
+    h += '<div class="star-player-item"><div class="star-player-avatar">' + s.emoji + '</div><span class="star-player-flag">' + s.flag + '</span><span class="star-player-name">' + s.name + '</span></div>';
+  }
+  c.innerHTML = h;
+})();
   var btns = document.querySelectorAll('.tab-btn');
   for (var i = 0; i < btns.length; i++) {
     btns[i].onclick = function() {
