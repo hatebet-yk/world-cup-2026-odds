@@ -2,7 +2,14 @@
 <html lang="zh-CN">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>2026世界杯夺冠概率排行榜</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<header><h1>🏆 2026 世界杯</h1><p class="subtitle">夺冠概率 · 赛程 · 数据综合</p><p class="update-badge" id="updateBadge">加载中... [v2]</p></header>
+<header>
+  <div class="header-banner"></div>
+  <div class="header-content">
+    <h1>🏆 2026 世界杯</h1>
+    <p class="subtitle">夺冠概率 · 赛程 · 数据综合</p>
+    <p class="update-badge" id="updateBadge">加载中... [v2]</p>
+  </div>
+</header>
 <nav class="tabs">
 <button class="tab-btn active" data-tab="odds">📊 夺冠概率</button>
 <button class="tab-btn" data-tab="schedule">📅 赛程分组</button>
@@ -31,6 +38,21 @@
 <section id="goldenBallSection"><h2>🏅 金球奖赔率</h2><p class="section-note">最佳球员 · 综合表现+球队成绩</p><div class="player-grid" id="goldenBallList"></div></section>
 </main>
 <footer><p>数据来源：综合主流博彩平台赔率 | 赛程数据参考官方安排</p><p>⚠️ 概率仅供参考，不构成投注建议</p></footer>
+
+<!-- 背景音乐浮窗 -->
+<div class="music-player" id="musicPlayer" onclick="toggleMusic()">
+  <div class="music-icon" id="musicIcon">🎵</div>
+  <div class="music-label">▶ 主题曲 Goals</div>
+</div>
+<div class="music-overlay" id="musicOverlay" style="display:none" onclick="toggleMusic()"></div>
+<div class="music-embed" id="musicEmbed" style="display:none">
+  <div class="music-embed-close" onclick="toggleMusic()">✕</div>
+  <iframe id="youtubePlayer" width="100%" height="100%"
+    src="https://www.youtube.com/embed/safzyuZNCGI?autoplay=1&enablejsapi=1"
+    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+  </iframe>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
 (function() {
@@ -596,6 +618,27 @@ window.onerror = function(msg, url, line) {
   else { window.addEventListener("load", initChart); }
 })();
 </script>
->
+<script>
+var musicOpen = false;
+function toggleMusic() {
+  musicOpen = !musicOpen;
+  var ov = document.getElementById('musicOverlay');
+  var em = document.getElementById('musicEmbed');
+  var ic = document.getElementById('musicIcon');
+  var lb = document.querySelector('.music-label');
+  if (musicOpen) {
+    ov.style.display = 'block';
+    em.style.display = 'block';
+    ic.textContent = '⏹';
+    lb.textContent = '⏸ 主题曲 Goals';
+    document.getElementById('youtubePlayer').src = 'https://www.youtube.com/embed/safzyuZNCGI?autoplay=1&enablejsapi=1';
+  } else {
+    ov.style.display = 'none';
+    em.style.display = 'none';
+    ic.textContent = '🎵';
+    lb.textContent = '▶ 主题曲 Goals';
+  }
+}
+</script>
 </body>
 </html>
