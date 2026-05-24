@@ -49,22 +49,30 @@
 <div class="music-embed" id="musicEmbed" style="display:none">
   <div class="music-embed-header">
     <span class="music-embed-title">🎵 LISA × Anitta × Rema — Goals (FIFA 2026™)</span>
+    <div class="music-embed-unmute" id="musicUnmuteBtn" onclick="event.stopPropagation();unmuteMusic()">🔇 取消静音</div>
     <div class="music-embed-close" onclick="toggleMusic()">✕</div>
   </div>
   <div class="music-embed-tabs">
-    <button class="music-src-btn active" onclick="switchMusicSrc('youtube', this)">▶ YouTube 视频</button>
-    <button class="music-src-btn" onclick="switchMusicSrc('ytmusic', this)">🎧 YouTube Music</button>
+    <button class="music-src-btn active" data-src="bilibili" onclick="switchMusicSrc('bilibili', this)">🎬 B站</button>
+    <button class="music-src-btn" data-src="youtube" onclick="switchMusicSrc('youtube', this)">▶ YouTube</button>
+    <button class="music-src-btn" data-src="ytmusic" onclick="switchMusicSrc('ytmusic', this)">🎧 YouTube Music</button>
   </div>
   <div class="music-embed-body" id="musicEmbedBody">
-    <iframe id="youtubePlayer" width="100%" height="100%"
-      src=""
-      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe id="biliPlayer" width="100%" height="100%"
+      src="https://player.bilibili.com/player.html?bvid=BV1NPLY6CEkg&autoplay=1&muted=1"
+      frameborder="0" allow="autoplay; encrypted-media">
     </iframe>
   </div>
   <div class="music-embed-footnote">
-    点击播放即打开官方音乐视频 | 如未播放请检查浏览器是否允许自动播放
+    🔇 静音自动播放（浏览器策略） | 点击「取消静音」开启声音
   </div>
 </div>
+
+<!-- 背景自动播放（静音，B站国内可访问） -->
+<iframe id="bgPlayer" width="0" height="0" style="display:none"
+  src="https://player.bilibili.com/player.html?bvid=BV1NPLY6CEkg&autoplay=1&muted=1&high_quality=1"
+  frameborder="0" allow="autoplay; encrypted-media">
+</iframe>
 
 
 
@@ -623,10 +631,27 @@ window.onerror = function(msg, url, line) {
 </script>
 <script>
 var musicOpen = false;
+var bgReady = false;
 var ytSources = {
+  bilibili: 'https://player.bilibili.com/player.html?bvid=BV1NPLY6CEkg&autoplay=1&muted=1',
   youtube: 'https://www.youtube.com/embed/safzyuZNCGI?autoplay=1&enablejsapi=1',
   ytmusic: 'https://music.youtube.com/watch?v=safzyuZNCGI&autoplay=1'
 };
+
+// 用户首次点击页面任意处时激活背景音乐
+var _bgEnabled = false;
+document.addEventListener('click', function _firstClick() {
+  if (_bgEnabled) return;
+  _bgEnabled = true;
+  document.removeEventListener('click', _firstClick);
+  var bg = document.getElementById('bgPlayer');
+  if (bg) {
+    bg.style.display = 'block';
+    bg.src = 'https://player.bilibili.com/player.html?bvid=BV1NPLY6CEkg&autoplay=1&muted=1&high_quality=1';
+    bgReady = true;
+  }
+}, { once: true });
+
 function toggleMusic() {
   musicOpen = !musicOpen;
   var ov = document.getElementById('musicOverlay');
@@ -638,22 +663,37 @@ function toggleMusic() {
     em.style.display = 'block';
     ic.textContent = '⏹';
     lb.textContent = '⏸ 主题曲 Goals';
-    switchMusicSrc('youtube', document.querySelector('.music-src-btn.active') || document.querySelector('.music-src-btn'));
+    var activeBtn = document.querySelector('.music-src-btn.active') || document.querySelector('.music-src-btn');
+    switchMusicSrc(activeBtn ? activeBtn.getAttribute('data-src') || 'bilibili' : 'bilibili', activeBtn);
   } else {
     ov.style.display = 'none';
     em.style.display = 'none';
     ic.textContent = '🎵';
     lb.textContent = '▶ 主题曲 Goals';
-    document.getElementById('youtubePlayer').src = '';
   }
 }
+
 function switchMusicSrc(src, btn) {
   var allBtns = document.querySelectorAll('.music-src-btn');
   for (var i = 0; i < allBtns.length; i++) allBtns[i].classList.remove('active');
   if (btn) btn.classList.add('active');
-  var iframe = document.getElementById('youtubePlayer');
-  if (src && ytSources[src]) {
-    iframe.src = ytSources[src];
+  var iframe = document.getElementById('biliPlayer');
+  if (!iframe) return;
+  var url = ytSources[src];
+  if (url) iframe.src = url;
+}
+
+function unmuteMusic() {
+  var bg = document.getElementById('bgPlayer');
+  if (bg) {
+    // Reload without muted
+    bg.src = 'https://player.bilibili.com/player.html?bvid=BV1NPLY6CEkg&autoplay=1&high_quality=1';
+  }
+  var btn = document.getElementById('musicUnmuteBtn');
+  if (btn) {
+    btn.textContent = '🔊 已取消静音';
+    btn.style.color = '#4ade80';
+    btn.style.pointerEvents = 'none';
   }
 }
 </script>

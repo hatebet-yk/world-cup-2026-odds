@@ -712,6 +712,20 @@ footer p + p { margin-top: 0.25rem; }
 }
 .music-embed-close:hover { background: rgba(239,68,68,0.6); color: #fff; }
 
+.music-embed-unmute {
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(74,222,128,0.1);
+  border: 1px solid rgba(74,222,128,0.25);
+  transition: all 0.15s;
+  font-family: var(--body-font);
+  font-weight: 500;
+}
+.music-embed-unmute:hover { background: rgba(74,222,128,0.2); color: #4ade80; }
+
 .music-embed-tabs {
   display: flex;
   gap: 0;
