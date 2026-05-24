@@ -3,14 +3,16 @@
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>2026世界杯夺冠概率排行榜</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="style.css?v=4"></head>
+<link rel="stylesheet" href="style.css?v=5"></head>
 <body>
 <header>
+  <div class="header-crown">🏆</div>
   <div class="header-badge">FIFA WORLD CUP 2026™</div>
-  <h1>🏆 <em>夺冠概率</em>排行榜</h1>
-  <p class="subtitle">美加墨三国联办 · 48 支球队逐鹿 · 实时数据综合</p>
+  <h1><em>夺冠概率</em>排行榜</h1>
+  <p class="subtitle">🇨🇦 加拿大 · 🇲🇽 墨西哥 · 🇺🇸 美国 三国联办</p>
+  <p class="subtitle-meta">48 支球队 · 实时数据综合 · 预测更新</p>
   <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank" class="fifa-link">🌐 官方赛事页面 →</a>
-  <p class="update-badge" id="updateBadge">加载中... [v2]</p>
+  <p class="update-badge" id="updateBadge">加载中... [v5]</p>
 </header>
 <nav class="tabs">
 <button class="tab-btn active" data-tab="odds">📊 夺冠概率</button>
@@ -164,18 +166,21 @@ $id('sortSelect').onchange = function() {
   if (sv === 'composite') s.sort(function(a,b){return b.prob - a.prob;});
   else if (sv === 'odds') s.sort(function(a,b){return a.avgOdds - b.avgOdds;});
   else s.sort(function(a,b){return a.name.localeCompare(b.name);});
+  var medals = ['🥇','🥈','🥉'];
   var h = '';
   for (var i = 0; i < s.length; i++) {
     var r = sv === 'name' ? '' : (i + 1);
+    var rankDisplay = (r === 1 || r === 2 || r === 3) ? medals[r-1] : r;
     var rc = r === 1 ? ' rank-1' : r === 2 ? ' rank-2' : r === 3 ? ' rank-3' : '';
     var p = (s[i].prob * 100).toFixed(1);
-    h += '<div class="team-card">' +
-      '<div class="rank' + rc + '">' + r + '</div>' +
-      '<div class="flag">' + flag(s[i].name) + '</div>' +
-      '<div class="info"><div class="name">' + cn(s[i].name) + ' (' + s[i].name + ')</div>' +
-      '<div class="stats-row"><span>赔率 ' + s[i].avgOdds.toFixed(1) + '</span><span>数据源 ' + sources(s[i]) + '</span></div></div>' +
-      '<div class="prob-bar"><div class="bar-bg"><div class="bar-fill" style="width:' + Math.min(p * 8, 100) + '%"></div></div></div>' +
-      '<div class="prob-value">' + p + '%</div></div>';
+    var barColor = p >= 10 ? '#f59e0b' : p >= 5 ? '#3b82f6' : p >= 2 ? '#6366f1' : '#475569';
+    h += '<div class="team-card' + rc + '">' +
+      '<div class="rank-wrap"><div class="rank-badge' + rc + '">' + rankDisplay + '</div></div>' +
+      '<div class="flag-wrap">' + flag(s[i].name) + '</div>' +
+      '<div class="info-wrap"><div class="team-name">' + cn(s[i].name) + '</div>' +
+      '<div class="team-meta">赔率 ' + s[i].avgOdds.toFixed(1) + ' · ' + sources(s[i]) + '</div></div>' +
+      '<div class="prob-wrap"><div class="prob-bar-bg"><div class="prob-bar-fill" style="width:' + Math.min(p * 8, 100) + '%;background:' + barColor + '"></div></div></div>' +
+      '<div class="prob-val" style="color:' + barColor + '">' + p + '%</div></div>';
   }
   g.innerHTML = h;
   var tc = $id('teamCount');
