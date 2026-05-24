@@ -40,14 +40,27 @@
 <div class="music-player" id="musicPlayer" onclick="toggleMusic()">
   <div class="music-icon" id="musicIcon">🎵</div>
   <div class="music-label">▶ 主题曲 Goals</div>
+  <div class="music-loading" id="musicLoading"></div>
 </div>
 <div class="music-overlay" id="musicOverlay" style="display:none" onclick="toggleMusic()"></div>
 <div class="music-embed" id="musicEmbed" style="display:none">
-  <div class="music-embed-close" onclick="toggleMusic()">✕</div>
-  <iframe id="youtubePlayer" width="100%" height="100%"
-    src="https://www.youtube.com/embed/safzyuZNCGI?autoplay=1&enablejsapi=1"
-    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-  </iframe>
+  <div class="music-embed-header">
+    <span class="music-embed-title">🎵 LISA × Anitta × Rema — Goals (FIFA 2026™)</span>
+    <div class="music-embed-close" onclick="toggleMusic()">✕</div>
+  </div>
+  <div class="music-embed-tabs">
+    <button class="music-src-btn active" onclick="switchMusicSrc('youtube', this)">▶ YouTube 视频</button>
+    <button class="music-src-btn" onclick="switchMusicSrc('ytmusic', this)">🎧 YouTube Music</button>
+  </div>
+  <div class="music-embed-body" id="musicEmbedBody">
+    <iframe id="youtubePlayer" width="100%" height="100%"
+      src=""
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="music-embed-footnote">
+    点击播放即打开官方音乐视频 | 如未播放请检查浏览器是否允许自动播放
+  </div>
 </div>
 
 
@@ -614,6 +627,10 @@ window.onerror = function(msg, url, line) {
 </script>
 <script>
 var musicOpen = false;
+var ytSources = {
+  youtube: 'https://www.youtube.com/embed/safzyuZNCGI?autoplay=1&enablejsapi=1',
+  ytmusic: 'https://music.youtube.com/watch?v=safzyuZNCGI&autoplay=1'
+};
 function toggleMusic() {
   musicOpen = !musicOpen;
   var ov = document.getElementById('musicOverlay');
@@ -625,12 +642,22 @@ function toggleMusic() {
     em.style.display = 'block';
     ic.textContent = '⏹';
     lb.textContent = '⏸ 主题曲 Goals';
-    document.getElementById('youtubePlayer').src = 'https://www.youtube.com/embed/safzyuZNCGI?autoplay=1&enablejsapi=1';
+    switchMusicSrc('youtube', document.querySelector('.music-src-btn.active') || document.querySelector('.music-src-btn'));
   } else {
     ov.style.display = 'none';
     em.style.display = 'none';
     ic.textContent = '🎵';
     lb.textContent = '▶ 主题曲 Goals';
+    document.getElementById('youtubePlayer').src = '';
+  }
+}
+function switchMusicSrc(src, btn) {
+  var allBtns = document.querySelectorAll('.music-src-btn');
+  for (var i = 0; i < allBtns.length; i++) allBtns[i].classList.remove('active');
+  if (btn) btn.classList.add('active');
+  var iframe = document.getElementById('youtubePlayer');
+  if (src && ytSources[src]) {
+    iframe.src = ytSources[src];
   }
 }
 </script>
