@@ -85,6 +85,18 @@ body {
 }
 
 
+/* ========== Player Silhouettes Background ========== */
+#playerBg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('player-bg.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+}
+
 /* ========== Animations ========== */
 @keyframes goldPulse {
   0%, 100% { opacity: 1; filter: brightness(1); }
