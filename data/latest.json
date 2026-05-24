@@ -1,416 +1,294 @@
 {
-  "updated": "2026-05-14 23:58 (CST)",
-  "note": "数据来源：Bet365 · William Hill · DraftKings",
+  "updated": "2026-05-24 20:43 (CST)",
+  "note": "数据来源：Bet365 · DraftKings · FanDuel · BetMGM",
   "teams": [
     {
+      "name": "Argentina",
+      "avgOdds": 5,
+      "modelProb": 0.2,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
       "name": "Brazil",
-      "avgOdds": 5.5,
-      "modelProb": 0.1818,
-      "sources": [
-        "Bet365",
-        "William Hill",
-        "DraftKings"
-      ]
+      "avgOdds": 6,
+      "modelProb": 0.16666666666666666,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "France",
-      "avgOdds": 6.0,
-      "modelProb": 0.1667,
-      "sources": [
-        "Bet365",
-        "William Hill",
-        "DraftKings"
-      ]
-    },
-    {
-      "name": "Argentina",
-      "avgOdds": 7.0,
-      "modelProb": 0.1429,
-      "sources": [
-        "Bet365",
-        "William Hill",
-        "DraftKings"
-      ]
+      "avgOdds": 6.5,
+      "modelProb": 0.15384615384615385,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "England",
-      "avgOdds": 7.5,
-      "modelProb": 0.1333,
-      "sources": [
-        "Bet365",
-        "William Hill",
-        "DraftKings"
-      ]
+      "avgOdds": 7,
+      "modelProb": 0.14285714285714285,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Germany",
-      "avgOdds": 9.0,
-      "modelProb": 0.1111,
-      "sources": [
-        "Bet365",
-        "William Hill",
-        "DraftKings"
-      ]
+      "avgOdds": 8,
+      "modelProb": 0.125,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Spain",
-      "avgOdds": 10.0,
-      "modelProb": 0.1,
-      "sources": [
-        "Bet365",
-        "William Hill",
-        "DraftKings"
-      ]
+      "avgOdds": 9,
+      "modelProb": 0.1111111111111111,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Portugal",
-      "avgOdds": 12.0,
-      "modelProb": 0.0833,
-      "sources": [
-        "Bet365",
-        "William Hill",
-        "DraftKings"
-      ]
+      "avgOdds": 11,
+      "modelProb": 0.09090909090909091,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Netherlands",
-      "avgOdds": 14.0,
-      "modelProb": 0.0714,
-      "sources": [
-        "Bet365",
-        "William Hill",
-        "DraftKings"
-      ]
+      "avgOdds": 13,
+      "modelProb": 0.07692307692307693,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Italy",
-      "avgOdds": 18.0,
-      "modelProb": 0.0556,
-      "sources": [
-        "Bet365",
-        "William Hill",
-        "DraftKings"
-      ]
+      "avgOdds": 15,
+      "modelProb": 0.06666666666666667,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Belgium",
-      "avgOdds": 21.0,
-      "modelProb": 0.0476,
-      "sources": [
-        "Bet365",
-        "William Hill"
-      ]
-    },
-    {
-      "name": "Croatia",
-      "avgOdds": 28.0,
-      "modelProb": 0.0357,
-      "sources": [
-        "Bet365",
-        "William Hill"
-      ]
-    },
-    {
-      "name": "Uruguay",
-      "avgOdds": 35.0,
-      "modelProb": 0.0286,
-      "sources": [
-        "Bet365",
-        "William Hill"
-      ]
-    },
-    {
-      "name": "Denmark",
-      "avgOdds": 38.0,
-      "modelProb": 0.0263,
-      "sources": [
-        "Bet365",
-        "William Hill"
-      ]
-    },
-    {
-      "name": "Mexico",
-      "avgOdds": 40.0,
-      "modelProb": 0.025,
-      "sources": [
-        "Bet365",
-        "William Hill"
-      ]
+      "avgOdds": 19,
+      "modelProb": 0.05263157894736842,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "USA",
-      "avgOdds": 45.0,
-      "modelProb": 0.0222,
-      "sources": [
-        "Bet365",
-        "William Hill"
-      ]
+      "avgOdds": 23,
+      "modelProb": 0.043478260869565216,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
-      "name": "Japan",
-      "avgOdds": 50.0,
-      "modelProb": 0.02,
-      "sources": [
-        "Bet365",
-        "William Hill"
-      ]
+      "name": "Mexico",
+      "avgOdds": 28,
+      "modelProb": 0.03571428571428571,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Croatia",
+      "avgOdds": 29,
+      "modelProb": 0.034482758620689655,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Uruguay",
+      "avgOdds": 34,
+      "modelProb": 0.029411764705882353,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Denmark",
+      "avgOdds": 36,
+      "modelProb": 0.027777777777777776,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Morocco",
-      "avgOdds": 60.0,
-      "modelProb": 0.0167,
-      "sources": [
-        "Bet365",
-        "William Hill"
-      ]
+      "avgOdds": 41,
+      "modelProb": 0.024390243902439025,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
-      "name": "Serbia",
-      "avgOdds": 65.0,
-      "modelProb": 0.0154,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Poland",
-      "avgOdds": 70.0,
-      "modelProb": 0.0143,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "South Korea",
-      "avgOdds": 80.0,
-      "modelProb": 0.0125,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Switzerland",
-      "avgOdds": 80.0,
-      "modelProb": 0.0125,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Senegal",
-      "avgOdds": 85.0,
-      "modelProb": 0.0118,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Nigeria",
-      "avgOdds": 90.0,
-      "modelProb": 0.0111,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Sweden",
-      "avgOdds": 95.0,
-      "modelProb": 0.0105,
-      "sources": [
-        "Bet365"
-      ]
+      "name": "Japan",
+      "avgOdds": 46,
+      "modelProb": 0.021739130434782608,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Canada",
-      "avgOdds": 100.0,
-      "modelProb": 0.01,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 51,
+      "modelProb": 0.0196078431372549,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Senegal",
+      "avgOdds": 61,
+      "modelProb": 0.01639344262295082,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Serbia",
+      "avgOdds": 66,
+      "modelProb": 0.015151515151515152,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Nigeria",
+      "avgOdds": 71,
+      "modelProb": 0.014084507042253521,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "South Korea",
+      "avgOdds": 76,
+      "modelProb": 0.013157894736842105,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Poland",
+      "avgOdds": 81,
+      "modelProb": 0.012345679012345678,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Switzerland",
+      "avgOdds": 81,
+      "modelProb": 0.012345679012345678,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Sweden",
+      "avgOdds": 91,
+      "modelProb": 0.01098901098901099,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Australia",
-      "avgOdds": 120.0,
-      "modelProb": 0.0083,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 101,
+      "modelProb": 0.009900990099009901,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Ecuador",
-      "avgOdds": 130.0,
-      "modelProb": 0.0077,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 126,
+      "modelProb": 0.007936507936507936,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Colombia",
-      "avgOdds": 140.0,
-      "modelProb": 0.0071,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Iran",
-      "avgOdds": 150.0,
-      "modelProb": 0.0067,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 151,
+      "modelProb": 0.006622516556291391,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Chile",
-      "avgOdds": 160.0,
-      "modelProb": 0.0063,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Peru",
-      "avgOdds": 170.0,
-      "modelProb": 0.0059,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 176,
+      "modelProb": 0.005681818181818182,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Norway",
-      "avgOdds": 180.0,
-      "modelProb": 0.0056,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 176,
+      "modelProb": 0.005681818181818182,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Iran",
+      "avgOdds": 201,
+      "modelProb": 0.004975124378109453,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Peru",
+      "avgOdds": 201,
+      "modelProb": 0.004975124378109453,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Cameroon",
-      "avgOdds": 200.0,
-      "modelProb": 0.005,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "New Zealand",
-      "avgOdds": 250.0,
-      "modelProb": 0.004,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 251,
+      "modelProb": 0.00398406374501992,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Algeria",
-      "avgOdds": 300.0,
-      "modelProb": 0.0033,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Saudi Arabia",
-      "avgOdds": 350.0,
-      "modelProb": 0.0029,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Costa Rica",
-      "avgOdds": 400.0,
-      "modelProb": 0.0025,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Ghana",
-      "avgOdds": 450.0,
-      "modelProb": 0.0022,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Egypt",
-      "avgOdds": 500.0,
-      "modelProb": 0.002,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 251,
+      "modelProb": 0.00398406374501992,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Ivory Coast",
-      "avgOdds": 500.0,
-      "modelProb": 0.002,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 301,
+      "modelProb": 0.0033222591362126247,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
-      "name": "Qatar",
-      "avgOdds": 600.0,
-      "modelProb": 0.0017,
-      "sources": [
-        "Bet365"
-      ]
+      "name": "Saudi Arabia",
+      "avgOdds": 351,
+      "modelProb": 0.002849002849002849,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
-      "name": "Panama",
-      "avgOdds": 700.0,
-      "modelProb": 0.0014,
-      "sources": [
-        "Bet365"
-      ]
+      "name": "Ghana",
+      "avgOdds": 401,
+      "modelProb": 0.0024937655860349127,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
-      "name": "Jamaica",
-      "avgOdds": 800.0,
-      "modelProb": 0.0013,
-      "sources": [
-        "Bet365"
-      ]
+      "name": "Egypt",
+      "avgOdds": 401,
+      "modelProb": 0.0024937655860349127,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
-      "name": "Paraguay",
-      "avgOdds": 900.0,
-      "modelProb": 0.0011,
-      "sources": [
-        "Bet365"
-      ]
-    },
-    {
-      "name": "Venezuela",
-      "avgOdds": 1000.0,
-      "modelProb": 0.001,
-      "sources": [
-        "Bet365"
-      ]
+      "name": "New Zealand",
+      "avgOdds": 501,
+      "modelProb": 0.001996007984031936,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Tunisia",
-      "avgOdds": 1000.0,
-      "modelProb": 0.001,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 501,
+      "modelProb": 0.001996007984031936,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Costa Rica",
+      "avgOdds": 501,
+      "modelProb": 0.001996007984031936,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Qatar",
+      "avgOdds": 751,
+      "modelProb": 0.0013315579227696406,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "South Africa",
-      "avgOdds": 1200.0,
-      "modelProb": 0.0008,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 1001,
+      "modelProb": 0.000999000999000999,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Panama",
+      "avgOdds": 1001,
+      "modelProb": 0.000999000999000999,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Paraguay",
+      "avgOdds": 1001,
+      "modelProb": 0.000999000999000999,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Jamaica",
+      "avgOdds": 1001,
+      "modelProb": 0.000999000999000999,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
+    },
+    {
+      "name": "Venezuela",
+      "avgOdds": 1501,
+      "modelProb": 0.0006662225183211193,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     },
     {
       "name": "Honduras",
-      "avgOdds": 1500.0,
-      "modelProb": 0.0007,
-      "sources": [
-        "Bet365"
-      ]
+      "avgOdds": 2001,
+      "modelProb": 0.0004997501249375312,
+      "sources": "Bet365 · DraftKings · FanDuel · BetMGM"
     }
   ],
   "history": [
@@ -521,6 +399,61 @@
           "name": "Belgium",
           "avgOdds": 20.79,
           "prob": 0.0479
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "teams": [
+        {
+          "name": "Argentina",
+          "avgOdds": 5,
+          "prob": 0.2
+        },
+        {
+          "name": "Brazil",
+          "avgOdds": 6,
+          "prob": 0.16666666666666666
+        },
+        {
+          "name": "France",
+          "avgOdds": 6.5,
+          "prob": 0.15384615384615385
+        },
+        {
+          "name": "England",
+          "avgOdds": 7,
+          "prob": 0.14285714285714285
+        },
+        {
+          "name": "Germany",
+          "avgOdds": 8,
+          "prob": 0.125
+        },
+        {
+          "name": "Spain",
+          "avgOdds": 9,
+          "prob": 0.1111111111111111
+        },
+        {
+          "name": "Portugal",
+          "avgOdds": 11,
+          "prob": 0.09090909090909091
+        },
+        {
+          "name": "Netherlands",
+          "avgOdds": 13,
+          "prob": 0.07692307692307693
+        },
+        {
+          "name": "Italy",
+          "avgOdds": 15,
+          "prob": 0.06666666666666667
+        },
+        {
+          "name": "Belgium",
+          "avgOdds": 19,
+          "prob": 0.05263157894736842
         }
       ]
     }

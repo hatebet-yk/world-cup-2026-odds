@@ -1,77 +1,26 @@
 {
-  "updated": "2026-05-14",
+  "updated": "2026-05-24",
+  "note": "金靴金球赔率（综合 Bet365 · DraftKings · FanDuel · BetMGM）",
   "goldenBoot": [
-    {
-      "name": "Kylian Mbappé",
-      "country": "France",
-      "avgOdds": 6.0
-    },
-    {
-      "name": "Erling Haaland",
-      "country": "Norway",
-      "avgOdds": 8.0
-    },
-    {
-      "name": "Harry Kane",
-      "country": "England",
-      "avgOdds": 10.0
-    },
-    {
-      "name": "Lionel Messi",
-      "country": "Argentina",
-      "avgOdds": 11.0
-    },
-    {
-      "name": "Vinicius Jr",
-      "country": "Brazil",
-      "avgOdds": 12.0
-    },
-    {
-      "name": "Ousmane Dembélé",
-      "country": "France",
-      "avgOdds": 18.0
-    },
-    {
-      "name": "Lautaro Martínez",
-      "country": "Argentina",
-      "avgOdds": 20.0
-    },
-    {
-      "name": "Alexander Isak",
-      "country": "Sweden",
-      "avgOdds": 25.0
-    }
+    { "name": "Kylian Mbappé", "country": "France", "avgOdds": 6.0 },
+    { "name": "Erling Haaland", "country": "Norway", "avgOdds": 8.0 },
+    { "name": "Harry Kane", "country": "England", "avgOdds": 9.0 },
+    { "name": "Lionel Messi", "country": "Argentina", "avgOdds": 11.0 },
+    { "name": "Vinicius Jr", "country": "Brazil", "avgOdds": 12.0 },
+    { "name": "Kylian Mbappe", "country": "France", "avgOdds": 12.0 },
+    { "name": "Ousmane Dembélé", "country": "France", "avgOdds": 17.0 },
+    { "name": "Lautaro Martínez", "country": "Argentina", "avgOdds": 19.0 },
+    { "name": "Alexander Isak", "country": "Sweden", "avgOdds": 23.0 },
+    { "name": "Kai Havertz", "country": "Germany", "avgOdds": 26.0 }
   ],
   "goldenBall": [
-    {
-      "name": "Lionel Messi",
-      "country": "Argentina",
-      "avgOdds": 7.0
-    },
-    {
-      "name": "Kylian Mbappé",
-      "country": "France",
-      "avgOdds": 9.0
-    },
-    {
-      "name": "Erling Haaland",
-      "country": "Norway",
-      "avgOdds": 11.0
-    },
-    {
-      "name": "Vinicius Jr",
-      "country": "Brazil",
-      "avgOdds": 13.0
-    },
-    {
-      "name": "Jude Bellingham",
-      "country": "England",
-      "avgOdds": 15.0
-    },
-    {
-      "name": "Rodri",
-      "country": "Spain",
-      "avgOdds": 18.0
-    }
+    { "name": "Lionel Messi", "country": "Argentina", "avgOdds": 7.0 },
+    { "name": "Kylian Mbappé", "country": "France", "avgOdds": 8.5 },
+    { "name": "Erling Haaland", "country": "Norway", "avgOdds": 11.0 },
+    { "name": "Vinicius Jr", "country": "Brazil", "avgOdds": 13.0 },
+    { "name": "Jude Bellingham", "country": "England", "avgOdds": 14.0 },
+    { "name": "Rodri", "country": "Spain", "avgOdds": 17.0 },
+    { "name": "Jamal Musiala", "country": "Germany", "avgOdds": 21.0 },
+    { "name": "Pedri", "country": "Spain", "avgOdds": 26.0 }
   ]
 }

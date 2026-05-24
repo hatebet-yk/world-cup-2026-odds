@@ -1,54 +1,114 @@
 {
-  "updated": "2026-05-15",
-  "note": "2026世界杯赛程数据（待官方确认后更新精确日期）",
+  "updated": "2026-05-24",
+  "note": "2026世界杯赛程数据（12小组×4队，更新于2026-05-24）",
   "groups": [
     {
       "group": "A",
-      "teams": ["Mexico", "Canada", "USA", "New Zealand"]
+      "teams": [
+        "Mexico",
+        "Canada",
+        "USA",
+        "New Zealand"
+      ]
     },
     {
       "group": "B",
-      "teams": ["Portugal", "Italy", "Morocco", "Iran"]
+      "teams": [
+        "Portugal",
+        "Italy",
+        "Morocco",
+        "Iran"
+      ]
     },
     {
       "group": "C",
-      "teams": ["France", "Netherlands", "Senegal", "Ecuador"]
+      "teams": [
+        "France",
+        "Netherlands",
+        "Senegal",
+        "Ecuador"
+      ]
     },
     {
       "group": "D",
-      "teams": ["Brazil", "Croatia", "Nigeria", "Australia"]
+      "teams": [
+        "Brazil",
+        "Croatia",
+        "Nigeria",
+        "Australia"
+      ]
     },
     {
       "group": "E",
-      "teams": ["England", "Denmark", "Algeria", "South Korea"]
+      "teams": [
+        "England",
+        "Denmark",
+        "Algeria",
+        "South Korea"
+      ]
     },
     {
       "group": "F",
-      "teams": ["Argentina", "Uruguay", "Ghana", "Saudi Arabia"]
+      "teams": [
+        "Argentina",
+        "Uruguay",
+        "Ghana",
+        "Saudi Arabia"
+      ]
     },
     {
       "group": "G",
-      "teams": ["Spain", "Switzerland", "Egypt", "Japan"]
+      "teams": [
+        "Spain",
+        "Switzerland",
+        "Egypt",
+        "Japan"
+      ]
     },
     {
       "group": "H",
-      "teams": ["Germany", "Belgium", "Cameroon", "USA"]
+      "teams": [
+        "Germany",
+        "Belgium",
+        "Cameroon",
+        "Paraguay"
+      ]
     },
     {
       "group": "I",
-      "teams": ["Colombia", "Sweden", "Tunisia", "Qatar"]
+      "teams": [
+        "Colombia",
+        "Sweden",
+        "Tunisia",
+        "Qatar"
+      ]
     },
     {
       "group": "J",
-      "teams": ["Serbia", "Poland", "Ivory Coast", "Paraguay"]
+      "teams": [
+        "Serbia",
+        "Poland",
+        "Ivory Coast",
+        "Jamaica"
+      ]
     },
     {
       "group": "K",
-      "teams": ["Mexico", "Peru", "South Africa", "Chile"]
+      "teams": [
+        "Peru",
+        "South Africa",
+        "Chile",
+        "Panama"
+      ]
     },
     {
       "group": "L",
-      "teams": ["Ukraine", "Norway", "Jamaica", "Costa Rica"]
+      "teams": [
+        "Norway",
+        "Venezuela",
+        "Costa Rica",
+        "Honduras"
+      ]
     }
   ],
   "knockout": {
