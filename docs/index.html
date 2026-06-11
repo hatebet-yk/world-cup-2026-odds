@@ -219,8 +219,12 @@
 <div class="music-overlay" id="musicOverlay" style="display:none" onclick="toggleMusic()"></div>
 <div class="music-embed" id="musicEmbed" style="display:none">
   <div class="music-embed-header">
-    <span class="music-embed-title">🎵 LISA × Anitta × Rema — Goals (FIFA 2026™)</span>
+    <span class="music-embed-title" id="musicEmbedTitle">🎵 LISA × Anitta × Rema — Goals (FIFA 2026™)</span>
     <div class="music-embed-close" onclick="toggleMusic()">✕</div>
+  </div>
+  <div class="music-song-select">
+    <button class="music-song-btn active" data-song="goals" onclick="switchSong('goals', this)">🏆 Goals (官方主题曲)</button>
+    <button class="music-song-btn" data-song="speed" onclick="switchSong('speed', this)">⚡ Champions (Speed)</button>
   </div>
   <div class="music-embed-tabs">
     <button class="music-src-btn active" data-src="bilibili" onclick="switchMusicSrc('bilibili', this)">🎬 B站</button>
@@ -884,12 +888,63 @@ window.onerror = function(msg, url, line) {
 })();
 </script>
 <script>
+var currentSong = 'goals';
 var musicOpen = false;
-var ytSources = {
-  bilibili: 'https://player.bilibili.com/player.html?bvid=BV1NPLY6CEkg&autoplay=1',
-  youtube: 'https://www.youtube.com/embed/safzyuZNCGI?autoplay=1',
-  ytmusic: 'https://music.youtube.com/watch?v=safzyuZNCGI&autoplay=1'
+var songs = {
+  goals: {
+    name: 'Goals',
+    artist: 'LISA \u00d7 Anitta \u00d7 Rema',
+    label: '\ud83c\udfc6 \u4e3b\u9898\u66f2 Goals',
+    title: '\ud83c\udfb5 LISA \u00d7 Anitta \u00d7 Rema \u2014 Goals (FIFA 2026\u2122)',
+    sources: {
+      bilibili: 'https://player.bilibili.com/player.html?bvid=BV1NPLY6CEkg&autoplay=1',
+      youtube: 'https://www.youtube.com/embed/safzyuZNCGI?autoplay=1',
+      ytmusic: 'https://music.youtube.com/watch?v=safzyuZNCGI&autoplay=1'
+    }
+  },
+  speed: {
+    name: 'World Cup (Champions)',
+    artist: 'IShowSpeed',
+    label: '\u26a1 Champions (Speed)',
+    title: '\u26a1 IShowSpeed \u2014 World Cup (Champions)',
+    sources: {
+      bilibili: '',
+      youtube: 'https://www.youtube.com/embed/vrY1THC_NQE?autoplay=1',
+      ytmusic: 'https://music.youtube.com/watch?v=vrY1THC_NQE&autoplay=1'
+    }
+  }
 };
+
+function switchSong(songId, btn) {
+  currentSong = songId;
+  var song = songs[songId];
+  if (!song) return;
+  var allSongBtns = document.querySelectorAll('.music-song-btn');
+  for (var i = 0; i < allSongBtns.length; i++) allSongBtns[i].classList.remove('active');
+  if (btn) btn.classList.add('active');
+  document.getElementById('musicEmbedTitle').textContent = song.title;
+  var biliBtn = document.querySelector('.music-src-btn[data-src="bilibili"]');
+  if (biliBtn) {
+    if (song.sources.bilibili) {
+      biliBtn.style.display = '';
+    } else {
+      biliBtn.style.display = 'none';
+      if (biliBtn.classList.contains('active')) {
+        var firstAvail = document.querySelector('.music-src-btn:not([data-src="bilibili"])');
+        if (firstAvail) switchMusicSrc(firstAvail.getAttribute('data-src'), firstAvail);
+      }
+    }
+  }
+  if (musicOpen) {
+    var activeBtn = document.querySelector('.music-src-btn.active');
+    if (activeBtn) {
+      switchMusicSrc(activeBtn.getAttribute('data-src'), activeBtn);
+    } else {
+      var firstAvail = document.querySelector('.music-src-btn');
+      if (firstAvail) switchMusicSrc(firstAvail.getAttribute('data-src'), firstAvail);
+    }
+  }
+}
 
 function toggleMusic() {
   musicOpen = !musicOpen;
@@ -897,18 +952,19 @@ function toggleMusic() {
   var em = document.getElementById('musicEmbed');
   var ic = document.getElementById('musicIcon');
   var lb = document.querySelector('.music-label');
+  var song = songs[currentSong];
   if (musicOpen) {
     ov.style.display = 'block';
     em.style.display = 'block';
-    ic.textContent = '⏹';
-    lb.textContent = '⏸ 主题曲 Goals';
-    var activeBtn = document.querySelector('.music-src-btn.active') || document.querySelector('.music-src-btn');
-    switchMusicSrc(activeBtn ? activeBtn.getAttribute('data-src') || 'bilibili' : 'bilibili', activeBtn);
+    ic.textContent = '\u23f9';
+    lb.textContent = '\u23f8 ' + song.label;
+    var activeBtn = document.querySelector('.music-src-btn.active') || document.querySelector('.music-src-btn:not([data-src="bilibili"])') || document.querySelector('.music-src-btn');
+    switchMusicSrc(activeBtn ? activeBtn.getAttribute('data-src') || 'youtube' : 'youtube', activeBtn);
   } else {
     ov.style.display = 'none';
     em.style.display = 'none';
-    ic.textContent = '🎵';
-    lb.textContent = '▶ 主题曲 Goals';
+    ic.textContent = '\ud83c\udfb5';
+    lb.textContent = '\u25b6 ' + song.label;
   }
 }
 
@@ -918,7 +974,9 @@ function switchMusicSrc(src, btn) {
   if (btn) btn.classList.add('active');
   var iframe = document.getElementById('biliPlayer');
   if (!iframe) return;
-  var url = ytSources[src];
+  var song = songs[currentSong];
+  if (!song) return;
+  var url = song.sources[src];
   if (url) iframe.src = url;
 }
 </script>
