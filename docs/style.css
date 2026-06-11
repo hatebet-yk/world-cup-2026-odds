@@ -1103,35 +1103,6 @@ footer p + p { margin-top: 0.25rem; }
 }
 .music-embed-close:hover { background: rgba(239,68,68,0.6); color: #fff; }
 
-.music-song-select {
-  display: flex;
-  gap: 0;
-  background: rgba(10,22,40,0.6);
-  border-bottom: 1px solid var(--border);
-}
-
-.music-song-btn {
-  flex: 1;
-  background: none;
-  border: none;
-  color: var(--text-faint);
-  font-family: var(--body-font);
-  font-size: 0.75rem;
-  padding: 0.5rem 0.3rem;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.15s;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.music-song-btn.active {
-  color: var(--gold-light);
-  border-bottom-color: var(--gold);
-}
-
-.music-song-btn:hover { color: var(--text); }
-
 .music-embed-tabs {
   display: flex;
   gap: 0;
