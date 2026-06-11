@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-24 20:43 (CST)",
+  "updated": "2026-06-11 21:24 (CST)",
   "note": "数据来源：Bet365 · DraftKings · FanDuel · BetMGM",
   "teams": [
     {
@@ -404,6 +404,61 @@
     },
     {
       "date": "2026-05-24",
+      "teams": [
+        {
+          "name": "Argentina",
+          "avgOdds": 5,
+          "prob": 0.2
+        },
+        {
+          "name": "Brazil",
+          "avgOdds": 6,
+          "prob": 0.16666666666666666
+        },
+        {
+          "name": "France",
+          "avgOdds": 6.5,
+          "prob": 0.15384615384615385
+        },
+        {
+          "name": "England",
+          "avgOdds": 7,
+          "prob": 0.14285714285714285
+        },
+        {
+          "name": "Germany",
+          "avgOdds": 8,
+          "prob": 0.125
+        },
+        {
+          "name": "Spain",
+          "avgOdds": 9,
+          "prob": 0.1111111111111111
+        },
+        {
+          "name": "Portugal",
+          "avgOdds": 11,
+          "prob": 0.09090909090909091
+        },
+        {
+          "name": "Netherlands",
+          "avgOdds": 13,
+          "prob": 0.07692307692307693
+        },
+        {
+          "name": "Italy",
+          "avgOdds": 15,
+          "prob": 0.06666666666666667
+        },
+        {
+          "name": "Belgium",
+          "avgOdds": 19,
+          "prob": 0.05263157894736842
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11",
       "teams": [
         {
           "name": "Argentina",
