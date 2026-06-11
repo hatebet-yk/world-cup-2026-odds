@@ -1,0 +1,774 @@
+{
+  "updated": "2026-06-11",
+  "groups": {
+    "A": {
+      "teams": [
+        "Mexico",
+        "Canada",
+        "USA",
+        "New Zealand"
+      ],
+      "matches": [
+        {
+          "id": 1,
+          "date": "2026-06-11",
+          "team1": "Mexico",
+          "team2": "Canada",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 2,
+          "date": "2026-06-12",
+          "team1": "Mexico",
+          "team2": "USA",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 3,
+          "date": "2026-06-13",
+          "team1": "Mexico",
+          "team2": "New Zealand",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 4,
+          "date": "2026-06-14",
+          "team1": "Canada",
+          "team2": "USA",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 5,
+          "date": "2026-06-15",
+          "team1": "Canada",
+          "team2": "New Zealand",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 6,
+          "date": "2026-06-16",
+          "team1": "USA",
+          "team2": "New Zealand",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    "B": {
+      "teams": [
+        "Portugal",
+        "Italy",
+        "Morocco",
+        "Iran"
+      ],
+      "matches": [
+        {
+          "id": 7,
+          "date": "2026-06-17",
+          "team1": "Portugal",
+          "team2": "Italy",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 8,
+          "date": "2026-06-18",
+          "team1": "Portugal",
+          "team2": "Morocco",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 9,
+          "date": "2026-06-19",
+          "team1": "Portugal",
+          "team2": "Iran",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 10,
+          "date": "2026-06-20",
+          "team1": "Italy",
+          "team2": "Morocco",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 11,
+          "date": "2026-06-21",
+          "team1": "Italy",
+          "team2": "Iran",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 12,
+          "date": "2026-06-22",
+          "team1": "Morocco",
+          "team2": "Iran",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    "C": {
+      "teams": [
+        "France",
+        "Netherlands",
+        "Senegal",
+        "Ecuador"
+      ],
+      "matches": [
+        {
+          "id": 13,
+          "date": "2026-06-23",
+          "team1": "France",
+          "team2": "Netherlands",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 14,
+          "date": "2026-06-24",
+          "team1": "France",
+          "team2": "Senegal",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 15,
+          "date": "2026-06-25",
+          "team1": "France",
+          "team2": "Ecuador",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 16,
+          "date": "2026-06-26",
+          "team1": "Netherlands",
+          "team2": "Senegal",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 17,
+          "date": "2026-06-11",
+          "team1": "Netherlands",
+          "team2": "Ecuador",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 18,
+          "date": "2026-06-12",
+          "team1": "Senegal",
+          "team2": "Ecuador",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    "D": {
+      "teams": [
+        "Brazil",
+        "Croatia",
+        "Nigeria",
+        "Australia"
+      ],
+      "matches": [
+        {
+          "id": 19,
+          "date": "2026-06-13",
+          "team1": "Brazil",
+          "team2": "Croatia",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 20,
+          "date": "2026-06-14",
+          "team1": "Brazil",
+          "team2": "Nigeria",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 21,
+          "date": "2026-06-15",
+          "team1": "Brazil",
+          "team2": "Australia",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 22,
+          "date": "2026-06-16",
+          "team1": "Croatia",
+          "team2": "Nigeria",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 23,
+          "date": "2026-06-17",
+          "team1": "Croatia",
+          "team2": "Australia",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 24,
+          "date": "2026-06-18",
+          "team1": "Nigeria",
+          "team2": "Australia",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    "E": {
+      "teams": [
+        "England",
+        "Denmark",
+        "Algeria",
+        "South Korea"
+      ],
+      "matches": [
+        {
+          "id": 25,
+          "date": "2026-06-19",
+          "team1": "England",
+          "team2": "Denmark",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 26,
+          "date": "2026-06-20",
+          "team1": "England",
+          "team2": "Algeria",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 27,
+          "date": "2026-06-21",
+          "team1": "England",
+          "team2": "South Korea",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 28,
+          "date": "2026-06-22",
+          "team1": "Denmark",
+          "team2": "Algeria",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 29,
+          "date": "2026-06-23",
+          "team1": "Denmark",
+          "team2": "South Korea",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 30,
+          "date": "2026-06-24",
+          "team1": "Algeria",
+          "team2": "South Korea",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    "F": {
+      "teams": [
+        "Argentina",
+        "Uruguay",
+        "Ghana",
+        "Saudi Arabia"
+      ],
+      "matches": [
+        {
+          "id": 31,
+          "date": "2026-06-25",
+          "team1": "Argentina",
+          "team2": "Uruguay",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 32,
+          "date": "2026-06-26",
+          "team1": "Argentina",
+          "team2": "Ghana",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 33,
+          "date": "2026-06-11",
+          "team1": "Argentina",
+          "team2": "Saudi Arabia",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 34,
+          "date": "2026-06-12",
+          "team1": "Uruguay",
+          "team2": "Ghana",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 35,
+          "date": "2026-06-13",
+          "team1": "Uruguay",
+          "team2": "Saudi Arabia",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 36,
+          "date": "2026-06-14",
+          "team1": "Ghana",
+          "team2": "Saudi Arabia",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    "G": {
+      "teams": [
+        "Spain",
+        "Switzerland",
+        "Egypt",
+        "Japan"
+      ],
+      "matches": [
+        {
+          "id": 37,
+          "date": "2026-06-15",
+          "team1": "Spain",
+          "team2": "Switzerland",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 38,
+          "date": "2026-06-16",
+          "team1": "Spain",
+          "team2": "Egypt",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 39,
+          "date": "2026-06-17",
+          "team1": "Spain",
+          "team2": "Japan",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 40,
+          "date": "2026-06-18",
+          "team1": "Switzerland",
+          "team2": "Egypt",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 41,
+          "date": "2026-06-19",
+          "team1": "Switzerland",
+          "team2": "Japan",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 42,
+          "date": "2026-06-20",
+          "team1": "Egypt",
+          "team2": "Japan",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    "H": {
+      "teams": [
+        "Germany",
+        "Belgium",
+        "Cameroon",
+        "Paraguay"
+      ],
+      "matches": [
+        {
+          "id": 43,
+          "date": "2026-06-21",
+          "team1": "Germany",
+          "team2": "Belgium",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 44,
+          "date": "2026-06-22",
+          "team1": "Germany",
+          "team2": "Cameroon",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 45,
+          "date": "2026-06-23",
+          "team1": "Germany",
+          "team2": "Paraguay",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 46,
+          "date": "2026-06-24",
+          "team1": "Belgium",
+          "team2": "Cameroon",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 47,
+          "date": "2026-06-25",
+          "team1": "Belgium",
+          "team2": "Paraguay",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 48,
+          "date": "2026-06-26",
+          "team1": "Cameroon",
+          "team2": "Paraguay",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    "I": {
+      "teams": [
+        "Colombia",
+        "Sweden",
+        "Tunisia",
+        "Qatar"
+      ],
+      "matches": [
+        {
+          "id": 49,
+          "date": "2026-06-11",
+          "team1": "Colombia",
+          "team2": "Sweden",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 50,
+          "date": "2026-06-12",
+          "team1": "Colombia",
+          "team2": "Tunisia",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 51,
+          "date": "2026-06-13",
+          "team1": "Colombia",
+          "team2": "Qatar",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 52,
+          "date": "2026-06-14",
+          "team1": "Sweden",
+          "team2": "Tunisia",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 53,
+          "date": "2026-06-15",
+          "team1": "Sweden",
+          "team2": "Qatar",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 54,
+          "date": "2026-06-16",
+          "team1": "Tunisia",
+          "team2": "Qatar",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    "J": {
+      "teams": [
+        "Serbia",
+        "Poland",
+        "Ivory Coast",
+        "Jamaica"
+      ],
+      "matches": [
+        {
+          "id": 55,
+          "date": "2026-06-17",
+          "team1": "Serbia",
+          "team2": "Poland",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 56,
+          "date": "2026-06-18",
+          "team1": "Serbia",
+          "team2": "Ivory Coast",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 57,
+          "date": "2026-06-19",
+          "team1": "Serbia",
+          "team2": "Jamaica",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 58,
+          "date": "2026-06-20",
+          "team1": "Poland",
+          "team2": "Ivory Coast",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 59,
+          "date": "2026-06-21",
+          "team1": "Poland",
+          "team2": "Jamaica",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 60,
+          "date": "2026-06-22",
+          "team1": "Ivory Coast",
+          "team2": "Jamaica",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    "K": {
+      "teams": [
+        "Peru",
+        "South Africa",
+        "Chile",
+        "Panama"
+      ],
+      "matches": [
+        {
+          "id": 61,
+          "date": "2026-06-23",
+          "team1": "Peru",
+          "team2": "South Africa",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 62,
+          "date": "2026-06-24",
+          "team1": "Peru",
+          "team2": "Chile",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 63,
+          "date": "2026-06-25",
+          "team1": "Peru",
+          "team2": "Panama",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 64,
+          "date": "2026-06-26",
+          "team1": "South Africa",
+          "team2": "Chile",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 65,
+          "date": "2026-06-11",
+          "team1": "South Africa",
+          "team2": "Panama",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 66,
+          "date": "2026-06-12",
+          "team1": "Chile",
+          "team2": "Panama",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    "L": {
+      "teams": [
+        "Norway",
+        "Venezuela",
+        "Costa Rica",
+        "Honduras"
+      ],
+      "matches": [
+        {
+          "id": 67,
+          "date": "2026-06-13",
+          "team1": "Norway",
+          "team2": "Venezuela",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 68,
+          "date": "2026-06-14",
+          "team1": "Norway",
+          "team2": "Costa Rica",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 69,
+          "date": "2026-06-15",
+          "team1": "Norway",
+          "team2": "Honduras",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 70,
+          "date": "2026-06-16",
+          "team1": "Venezuela",
+          "team2": "Costa Rica",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 71,
+          "date": "2026-06-17",
+          "team1": "Venezuela",
+          "team2": "Honduras",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 72,
+          "date": "2026-06-18",
+          "team1": "Costa Rica",
+          "team2": "Honduras",
+          "score1": null,
+          "score2": null,
+          "status": "upcoming"
+        }
+      ]
+    }
+  },
+  "computeStandings": "function computeStandings(groupData) {\n  const standings = {};\n  for (const team of groupData.teams) {\n    standings[team] = { pts: 0, gp: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0 };\n  }\n  for (const m of groupData.matches) {\n    if (m.status !== \"finished\" || m.score1 === null) continue;\n    const t1 = m.team1, t2 = m.team2;\n    standings[t1].gp++;\n    standings[t2].gp++;\n    standings[t1].gf += m.score1;\n    standings[t1].ga += m.score2;\n    standings[t2].gf += m.score2;\n    standings[t2].ga += m.score1;\n    if (m.score1 > m.score2) {\n      standings[t1].w++;\n      standings[t1].pts += 3;\n      standings[t2].l++;\n    } else if (m.score1 < m.score2) {\n      standings[t2].w++;\n      standings[t2].pts += 3;\n      standings[t1].l++;\n    } else {\n      standings[t1].d++;\n      standings[t2].d++;\n      standings[t1].pts++;\n      standings[t2].pts++;\n    }\n  }\n  return standings;\n}"
+}

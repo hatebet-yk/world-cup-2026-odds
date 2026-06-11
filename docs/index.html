@@ -3,7 +3,117 @@
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>2026世界杯夺冠概率排行榜</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="style.css?v=8"></head>
+<link rel="stylesheet" href="style.css?v=8"><style>
+
+/* ===== Group Matches Tab (小組賽) ===== */
+.gm-group-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.gm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.gm-header h3 {
+  font-size: 1.2rem;
+  color: var(--accent-light);
+}
+.gm-updated {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.gm-standings {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+.gm-standings th {
+  color: var(--text-dim);
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 6px 4px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.gm-standings th:nth-child(3) { text-align: left; }
+.gm-standings td {
+  padding: 8px 4px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.gm-standings-row.gm-rank-top td:first-child {
+  color: var(--gold);
+  font-weight: 700;
+}
+.gm-flag-cell { font-size: 1.2rem; padding: 4px; }
+.gm-team-cell { text-align: left !important; font-weight: 500; }
+.gm-gd { font-weight: 600; }
+.gm-gd-pos { color: #22c55e; }
+.gm-gd-neg { color: #ef4444; }
+.gm-pts { color: var(--gold); font-weight: 700; font-size: 1rem; }
+.gm-matches { display: flex; flex-direction: column; gap: 6px; }
+.gm-match {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  font-size: 0.85rem;
+}
+.gm-match.gm-match-done {
+  background: rgba(34,197,94,0.08);
+}
+.gm-match-date {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  min-width: 80px;
+  white-space: nowrap;
+}
+.gm-today-badge {
+  background: var(--accent);
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.gm-team {
+  flex: 1;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.gm-score {
+  font-weight: 700;
+  min-width: 50px;
+  text-align: center;
+  color: var(--accent-light);
+}
+.gm-score-upcoming { color: var(--text-faint); }
+.gm-score-live { color: #f59e0b; }
+.gm-footnote {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .gm-standings { font-size: 0.78rem; }
+  .gm-standings td, .gm-standings th { padding: 4px 2px; }
+  .gm-match { font-size: 0.78rem; gap: 6px; }
+  .gm-match-date { min-width: 65px; }
+}
+</style>
+</head>
 <body>
 <!-- 球星合影背景 -->
 <div id="photoBg"></div>
@@ -70,6 +180,7 @@
 <button class="tab-btn" data-tab="predictions">🔮 八强·黑马</button>
 <button class="tab-btn" data-tab="bracket">🏆 淘汰赛对阵</button>
 <button class="tab-btn" data-tab="players">⚽ 金靴·金球</button>
+<button class="tab-btn" data-tab="matches">📋 小组赛程</button>
 </nav>
 <main id="tab-odds" class="tab-content active">
 <section id="rankingSection"><div class="controls"><label for="sortSelect">排序：</label><select id="sortSelect"><option value="composite">综合概率 ↓</option><option value="odds">赔率系数 ↓</option><option value="name">国家名称 ↑</option></select><span class="team-count" id="teamCount">共 0 支球队</span></div><div class="ranking-grid" id="rankingGrid"></div></section>
@@ -90,6 +201,12 @@
 <main id="tab-players" class="tab-content">
 <section id="goldenBootSection"><h2>⚽ 金靴赔率</h2><p class="section-note">最佳射手 · 赔率越低概率越高</p><div class="player-grid" id="goldenBootList"></div></section>
 <section id="goldenBallSection"><h2>🏅 金球奖赔率</h2><p class="section-note">最佳球员 · 综合表现+球队成绩</p><div class="player-grid" id="goldenBallList"></div></section>
+</main>
+
+<main id="tab-matches" class="tab-content">
+<section id="matchSection"><h2>📋 小组赛对阵结果</h2>
+<p class="section-note">每组4队单循环 · 前两名+8个最佳第三名晋级32强 · 每日13:00更新比分</p>
+<div id="matchResultsContainer"><p class="placeholder-text">加载小组赛数据...</p></div></section>
 </main>
 <footer><p>数据来源：综合主流博彩平台赔率 | 赛程数据参考官方安排</p><p>⚠️ 概率仅供参考，不构成投注建议</p></footer>
 
@@ -146,11 +263,94 @@ var ODDS_DATA = {"updated":"2026-06-11 21:24 (CST)","teams":[{"name":"Argentina"
 var SCHEDULE_DATA = {"updated": "2026-06-11", "groups": [{"group": "A", "teams": ["Mexico", "Canada", "USA", "New Zealand"]}, {"group": "B", "teams": ["Portugal", "Italy", "Morocco", "Iran"]}, {"group": "C", "teams": ["France", "Netherlands", "Senegal", "Ecuador"]}, {"group": "D", "teams": ["Brazil", "Croatia", "Nigeria", "Australia"]}, {"group": "E", "teams": ["England", "Denmark", "Algeria", "South Korea"]}, {"group": "F", "teams": ["Argentina", "Uruguay", "Ghana", "Saudi Arabia"]}, {"group": "G", "teams": ["Spain", "Switzerland", "Egypt", "Japan"]}, {"group": "H", "teams": ["Germany", "Belgium", "Cameroon", "Paraguay"]}, {"group": "I", "teams": ["Colombia", "Sweden", "Tunisia", "Qatar"]}, {"group": "J", "teams": ["Serbia", "Poland", "Ivory Coast", "Jamaica"]}, {"group": "K", "teams": ["Peru", "South Africa", "Chile", "Panama"]}, {"group": "L", "teams": ["Norway", "Venezuela", "Costa Rica", "Honduras"]}], "knockout": {"round32": "2026-06-29 至 2026-07-02", "round16": "2026-07-04 至 2026-07-07", "quarter": "2026-07-09 至 2026-07-10", "semi": "2026-07-14 至 2026-07-15", "thirdPlace": "2026-07-18", "final": "2026-07-19"}};
 var BRACKET_DATA = {"round32":[{"match":1,"team1":"Argentina","team2":"South Korea"},{"match":2,"team1":"France","team2":"Canada"},{"match":3,"team1":"Brazil","team2":"Switzerland"},{"match":4,"team1":"England","team2":"Morocco"},{"match":5,"team1":"Germany","team2":"Serbia"},{"match":6,"team1":"Spain","team2":"Japan"},{"match":7,"team1":"Portugal","team2":"Nigeria"},{"match":8,"team1":"Netherlands","team2":"Senegal"},{"match":9,"team1":"Italy","team2":"Croatia"},{"match":10,"team1":"Belgium","team2":"Denmark"},{"match":11,"team1":"USA","team2":"Mexico"},{"match":12,"team1":"Uruguay","team2":"Sweden"},{"match":13,"team1":"Colombia","team2":"Poland"},{"match":14,"team1":"Ecuador","team2":"Australia"},{"match":15,"team1":"Norway","team2":"Peru"},{"match":16,"team1":"Chile","team2":"Iran"}],"round16":[],"quarter":[],"semi":[],"final":{"team1":"TBD","team2":"TBD","winner":"TBD"}};
 var PLAYER_DATA = {"updated":"2026-06-11","goldenBoot":[{"name":"Kylian Mbappé","country":"France","avgOdds":6,"sources":["Bet365"],"reason":"上届金靴8球，法国核心前锋"},{"name":"Erling Haaland","country":"Norway","avgOdds":8,"sources":["Bet365"],"reason":"挪威锋线核心，进球效率全球第一"},{"name":"Harry Kane","country":"England","avgOdds":9,"sources":["Bet365"],"reason":"英格兰队长，稳定高产射手"},{"name":"Lionel Messi","country":"Argentina","avgOdds":11,"sources":["Bet365"],"reason":"卫冕冠军队长，最后一届世界杯"},{"name":"Vinicius Jr","country":"Brazil","avgOdds":12,"sources":["Bet365"],"reason":"巴西进攻核心，突破能力顶级"},{"name":"Ousmane Dembélé","country":"France","avgOdds":17,"sources":["Bet365"],"reason":"法国主力边锋，助攻能力出色"},{"name":"Lautaro Martínez","country":"Argentina","avgOdds":19,"sources":["Bet365"],"reason":"阿根廷主力中锋，支点作用突出"},{"name":"Alexander Isak","country":"Sweden","avgOdds":23,"sources":["Bet365"],"reason":"瑞典新星锋霸，英超顶级射手"}],"goldenBall":[{"name":"Lionel Messi","country":"Argentina","avgOdds":7,"sources":["Bet365"],"reason":"卫冕冠军+上届金球，最后一舞"},{"name":"Kylian Mbappé","country":"France","avgOdds":8.5,"sources":["Bet365"],"reason":"法国核心，上届金靴得主"},{"name":"Erling Haaland","country":"Norway","avgOdds":11,"sources":["Bet365"],"reason":"挪威核心，带队有望突破"},{"name":"Vinicius Jr","country":"Brazil","avgOdds":13,"sources":["Bet365"],"reason":"巴西新10号，个人能力突出"},{"name":"Jude Bellingham","country":"England","avgOdds":14,"sources":["Bet365"],"reason":"英格兰中场核心，全面能力"},{"name":"Rodri","country":"Spain","avgOdds":17,"sources":["Bet365"],"reason":"西班牙+曼城双料核心"}]};
+var GROUP_MATCHES = {"updated":"2026-06-11","groups":{"A":{"teams":["Mexico","Canada","USA","New Zealand"],"matches":[{"id":1,"date":"2026-06-11","team1":"Mexico","team2":"Canada","score1":null,"score2":null,"status":"upcoming"},{"id":2,"date":"2026-06-12","team1":"Mexico","team2":"USA","score1":null,"score2":null,"status":"upcoming"},{"id":3,"date":"2026-06-13","team1":"Mexico","team2":"New Zealand","score1":null,"score2":null,"status":"upcoming"},{"id":4,"date":"2026-06-14","team1":"Canada","team2":"USA","score1":null,"score2":null,"status":"upcoming"},{"id":5,"date":"2026-06-15","team1":"Canada","team2":"New Zealand","score1":null,"score2":null,"status":"upcoming"},{"id":6,"date":"2026-06-16","team1":"USA","team2":"New Zealand","score1":null,"score2":null,"status":"upcoming"}]},"B":{"teams":["Portugal","Italy","Morocco","Iran"],"matches":[{"id":7,"date":"2026-06-17","team1":"Portugal","team2":"Italy","score1":null,"score2":null,"status":"upcoming"},{"id":8,"date":"2026-06-18","team1":"Portugal","team2":"Morocco","score1":null,"score2":null,"status":"upcoming"},{"id":9,"date":"2026-06-19","team1":"Portugal","team2":"Iran","score1":null,"score2":null,"status":"upcoming"},{"id":10,"date":"2026-06-20","team1":"Italy","team2":"Morocco","score1":null,"score2":null,"status":"upcoming"},{"id":11,"date":"2026-06-21","team1":"Italy","team2":"Iran","score1":null,"score2":null,"status":"upcoming"},{"id":12,"date":"2026-06-22","team1":"Morocco","team2":"Iran","score1":null,"score2":null,"status":"upcoming"}]},"C":{"teams":["France","Netherlands","Senegal","Ecuador"],"matches":[{"id":13,"date":"2026-06-23","team1":"France","team2":"Netherlands","score1":null,"score2":null,"status":"upcoming"},{"id":14,"date":"2026-06-24","team1":"France","team2":"Senegal","score1":null,"score2":null,"status":"upcoming"},{"id":15,"date":"2026-06-25","team1":"France","team2":"Ecuador","score1":null,"score2":null,"status":"upcoming"},{"id":16,"date":"2026-06-26","team1":"Netherlands","team2":"Senegal","score1":null,"score2":null,"status":"upcoming"},{"id":17,"date":"2026-06-11","team1":"Netherlands","team2":"Ecuador","score1":null,"score2":null,"status":"upcoming"},{"id":18,"date":"2026-06-12","team1":"Senegal","team2":"Ecuador","score1":null,"score2":null,"status":"upcoming"}]},"D":{"teams":["Brazil","Croatia","Nigeria","Australia"],"matches":[{"id":19,"date":"2026-06-13","team1":"Brazil","team2":"Croatia","score1":null,"score2":null,"status":"upcoming"},{"id":20,"date":"2026-06-14","team1":"Brazil","team2":"Nigeria","score1":null,"score2":null,"status":"upcoming"},{"id":21,"date":"2026-06-15","team1":"Brazil","team2":"Australia","score1":null,"score2":null,"status":"upcoming"},{"id":22,"date":"2026-06-16","team1":"Croatia","team2":"Nigeria","score1":null,"score2":null,"status":"upcoming"},{"id":23,"date":"2026-06-17","team1":"Croatia","team2":"Australia","score1":null,"score2":null,"status":"upcoming"},{"id":24,"date":"2026-06-18","team1":"Nigeria","team2":"Australia","score1":null,"score2":null,"status":"upcoming"}]},"E":{"teams":["England","Denmark","Algeria","South Korea"],"matches":[{"id":25,"date":"2026-06-19","team1":"England","team2":"Denmark","score1":null,"score2":null,"status":"upcoming"},{"id":26,"date":"2026-06-20","team1":"England","team2":"Algeria","score1":null,"score2":null,"status":"upcoming"},{"id":27,"date":"2026-06-21","team1":"England","team2":"South Korea","score1":null,"score2":null,"status":"upcoming"},{"id":28,"date":"2026-06-22","team1":"Denmark","team2":"Algeria","score1":null,"score2":null,"status":"upcoming"},{"id":29,"date":"2026-06-23","team1":"Denmark","team2":"South Korea","score1":null,"score2":null,"status":"upcoming"},{"id":30,"date":"2026-06-24","team1":"Algeria","team2":"South Korea","score1":null,"score2":null,"status":"upcoming"}]},"F":{"teams":["Argentina","Uruguay","Ghana","Saudi Arabia"],"matches":[{"id":31,"date":"2026-06-25","team1":"Argentina","team2":"Uruguay","score1":null,"score2":null,"status":"upcoming"},{"id":32,"date":"2026-06-26","team1":"Argentina","team2":"Ghana","score1":null,"score2":null,"status":"upcoming"},{"id":33,"date":"2026-06-11","team1":"Argentina","team2":"Saudi Arabia","score1":null,"score2":null,"status":"upcoming"},{"id":34,"date":"2026-06-12","team1":"Uruguay","team2":"Ghana","score1":null,"score2":null,"status":"upcoming"},{"id":35,"date":"2026-06-13","team1":"Uruguay","team2":"Saudi Arabia","score1":null,"score2":null,"status":"upcoming"},{"id":36,"date":"2026-06-14","team1":"Ghana","team2":"Saudi Arabia","score1":null,"score2":null,"status":"upcoming"}]},"G":{"teams":["Spain","Switzerland","Egypt","Japan"],"matches":[{"id":37,"date":"2026-06-15","team1":"Spain","team2":"Switzerland","score1":null,"score2":null,"status":"upcoming"},{"id":38,"date":"2026-06-16","team1":"Spain","team2":"Egypt","score1":null,"score2":null,"status":"upcoming"},{"id":39,"date":"2026-06-17","team1":"Spain","team2":"Japan","score1":null,"score2":null,"status":"upcoming"},{"id":40,"date":"2026-06-18","team1":"Switzerland","team2":"Egypt","score1":null,"score2":null,"status":"upcoming"},{"id":41,"date":"2026-06-19","team1":"Switzerland","team2":"Japan","score1":null,"score2":null,"status":"upcoming"},{"id":42,"date":"2026-06-20","team1":"Egypt","team2":"Japan","score1":null,"score2":null,"status":"upcoming"}]},"H":{"teams":["Germany","Belgium","Cameroon","Paraguay"],"matches":[{"id":43,"date":"2026-06-21","team1":"Germany","team2":"Belgium","score1":null,"score2":null,"status":"upcoming"},{"id":44,"date":"2026-06-22","team1":"Germany","team2":"Cameroon","score1":null,"score2":null,"status":"upcoming"},{"id":45,"date":"2026-06-23","team1":"Germany","team2":"Paraguay","score1":null,"score2":null,"status":"upcoming"},{"id":46,"date":"2026-06-24","team1":"Belgium","team2":"Cameroon","score1":null,"score2":null,"status":"upcoming"},{"id":47,"date":"2026-06-25","team1":"Belgium","team2":"Paraguay","score1":null,"score2":null,"status":"upcoming"},{"id":48,"date":"2026-06-26","team1":"Cameroon","team2":"Paraguay","score1":null,"score2":null,"status":"upcoming"}]},"I":{"teams":["Colombia","Sweden","Tunisia","Qatar"],"matches":[{"id":49,"date":"2026-06-11","team1":"Colombia","team2":"Sweden","score1":null,"score2":null,"status":"upcoming"},{"id":50,"date":"2026-06-12","team1":"Colombia","team2":"Tunisia","score1":null,"score2":null,"status":"upcoming"},{"id":51,"date":"2026-06-13","team1":"Colombia","team2":"Qatar","score1":null,"score2":null,"status":"upcoming"},{"id":52,"date":"2026-06-14","team1":"Sweden","team2":"Tunisia","score1":null,"score2":null,"status":"upcoming"},{"id":53,"date":"2026-06-15","team1":"Sweden","team2":"Qatar","score1":null,"score2":null,"status":"upcoming"},{"id":54,"date":"2026-06-16","team1":"Tunisia","team2":"Qatar","score1":null,"score2":null,"status":"upcoming"}]},"J":{"teams":["Serbia","Poland","Ivory Coast","Jamaica"],"matches":[{"id":55,"date":"2026-06-17","team1":"Serbia","team2":"Poland","score1":null,"score2":null,"status":"upcoming"},{"id":56,"date":"2026-06-18","team1":"Serbia","team2":"Ivory Coast","score1":null,"score2":null,"status":"upcoming"},{"id":57,"date":"2026-06-19","team1":"Serbia","team2":"Jamaica","score1":null,"score2":null,"status":"upcoming"},{"id":58,"date":"2026-06-20","team1":"Poland","team2":"Ivory Coast","score1":null,"score2":null,"status":"upcoming"},{"id":59,"date":"2026-06-21","team1":"Poland","team2":"Jamaica","score1":null,"score2":null,"status":"upcoming"},{"id":60,"date":"2026-06-22","team1":"Ivory Coast","team2":"Jamaica","score1":null,"score2":null,"status":"upcoming"}]},"K":{"teams":["Peru","South Africa","Chile","Panama"],"matches":[{"id":61,"date":"2026-06-23","team1":"Peru","team2":"South Africa","score1":null,"score2":null,"status":"upcoming"},{"id":62,"date":"2026-06-24","team1":"Peru","team2":"Chile","score1":null,"score2":null,"status":"upcoming"},{"id":63,"date":"2026-06-25","team1":"Peru","team2":"Panama","score1":null,"score2":null,"status":"upcoming"},{"id":64,"date":"2026-06-26","team1":"South Africa","team2":"Chile","score1":null,"score2":null,"status":"upcoming"},{"id":65,"date":"2026-06-11","team1":"South Africa","team2":"Panama","score1":null,"score2":null,"status":"upcoming"},{"id":66,"date":"2026-06-12","team1":"Chile","team2":"Panama","score1":null,"score2":null,"status":"upcoming"}]},"L":{"teams":["Norway","Venezuela","Costa Rica","Honduras"],"matches":[{"id":67,"date":"2026-06-13","team1":"Norway","team2":"Venezuela","score1":null,"score2":null,"status":"upcoming"},{"id":68,"date":"2026-06-14","team1":"Norway","team2":"Costa Rica","score1":null,"score2":null,"status":"upcoming"},{"id":69,"date":"2026-06-15","team1":"Norway","team2":"Honduras","score1":null,"score2":null,"status":"upcoming"},{"id":70,"date":"2026-06-16","team1":"Venezuela","team2":"Costa Rica","score1":null,"score2":null,"status":"upcoming"},{"id":71,"date":"2026-06-17","team1":"Venezuela","team2":"Honduras","score1":null,"score2":null,"status":"upcoming"},{"id":72,"date":"2026-06-18","team1":"Costa Rica","team2":"Honduras","score1":null,"score2":null,"status":"upcoming"}]}},"computeStandings":"function computeStandings(groupData) {\n  const standings = {};\n  for (const team of groupData.teams) {\n    standings[team] = { pts: 0, gp: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0 };\n  }\n  for (const m of groupData.matches) {\n    if (m.status !== \"finished\" || m.score1 === null) continue;\n    const t1 = m.team1, t2 = m.team2;\n    standings[t1].gp++;\n    standings[t2].gp++;\n    standings[t1].gf += m.score1;\n    standings[t1].ga += m.score2;\n    standings[t2].gf += m.score2;\n    standings[t2].ga += m.score1;\n    if (m.score1 > m.score2) {\n      standings[t1].w++;\n      standings[t1].pts += 3;\n      standings[t2].l++;\n    } else if (m.score1 < m.score2) {\n      standings[t2].w++;\n      standings[t2].pts += 3;\n      standings[t1].l++;\n    } else {\n      standings[t1].d++;\n      standings[t2].d++;\n      standings[t1].pts++;\n      standings[t2].pts++;\n    }\n  }\n  return standings;\n}"};
+
 var FLAGS = {'Argentina':'🇦🇷','Brazil':'🇧🇷','England':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','France':'🇫🇷','Germany':'🇩🇪','Spain':'🇪🇸','Portugal':'🇵🇹','Netherlands':'🇳🇱','Italy':'🇮🇹','Belgium':'🇧🇪','Croatia':'🇭🇷','Denmark':'🇩🇰','Switzerland':'🇨🇭','Uruguay':'🇺🇾','Mexico':'🇲🇽','USA':'🇺🇸','Japan':'🇯🇵','South Korea':'🇰🇷','Australia':'🇦🇺','Canada':'🇨🇦','Morocco':'🇲🇦','Senegal':'🇸🇳','Nigeria':'🇳🇬','Cameroon':'🇨🇲','Ghana':'🇬🇭','Tunisia':'🇹🇳','Egypt':'🇪🇬','Algeria':'🇩🇿','Ivory Coast':'🇨🇮','South Africa':'🇿🇦','Iran':'🇮🇷','Saudi Arabia':'🇸🇦','Qatar':'🇶🇦','Ecuador':'🇪🇨','Colombia':'🇨🇴','Chile':'🇨🇱','Peru':'🇵🇪','Paraguay':'🇵🇾','Venezuela':'🇻🇪','Costa Rica':'🇨🇷','Panama':'🇵🇦','Jamaica':'🇯🇲','Honduras':'🇭🇳','New Zealand':'🇳🇿','Fiji':'🇫🇯','Serbia':'🇷🇸','Poland':'🇵🇱','Sweden':'🇸🇪','Norway':'🇳🇴'};
 var CN = {'Argentina':'阿根廷','Brazil':'巴西','England':'英格兰','France':'法国','Germany':'德国','Spain':'西班牙','Portugal':'葡萄牙','Netherlands':'荷兰','Italy':'意大利','Belgium':'比利时','Croatia':'克罗地亚','Denmark':'丹麦','Switzerland':'瑞士','Uruguay':'乌拉圭','Mexico':'墨西哥','USA':'美国','Japan':'日本','South Korea':'韩国','Australia':'澳大利亚','Canada':'加拿大','Morocco':'摩洛哥','Senegal':'塞内加尔','Nigeria':'尼日利亚','Cameroon':'喀麦隆','Ghana':'加纳','Tunisia':'突尼斯','Egypt':'埃及','Algeria':'阿尔及利亚','Ivory Coast':'科特迪瓦','South Africa':'南非','Iran':'伊朗','Saudi Arabia':'沙特阿拉伯','Qatar':'卡塔尔','Ecuador':'厄瓜多尔','Colombia':'哥伦比亚','Chile':'智利','Peru':'秘鲁','Paraguay':'巴拉圭','Venezuela':'委内瑞拉','Costa Rica':'哥斯达黎加','Panama':'巴拿马','Jamaica':'牙买加','Honduras':'洪都拉斯','New Zealand':'新西兰','Fiji':'斐济','Serbia':'塞尔维亚','Poland':'波兰','Panama':'巴拿马','Sweden':'瑞典','Norway':'挪威'};
 var STG = {round32:'32强赛',round16:'16强赛',quarter:'1/4决赛',semi:'半决赛',thirdPlace:'三四名决赛',final:'决赛'};
 
 
+
+
+// ===== Group Matches =====
+(function() {
+  var d = GROUP_MATCHES;
+  var c = $id('matchResultsContainer');
+  if (!c) return;
+  if (!d || !d.groups) { c.innerHTML = '<p class="placeholder-text">小组赛数据加载中...</p>'; return; }
+  
+  var gt = d.groups;
+  var keys = Object.keys(gt).sort();
+  var today = new Date();
+  var todayStr = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
+  
+  var h = '';
+  for (var gi = 0; gi < keys.length; gi++) {
+    var gk = keys[gi];
+    var gr = gt[gk];
+    var teams = gr.teams;
+    var matches = gr.matches;
+    
+    // Compute standings
+    var st = {};
+    for (var ti = 0; ti < teams.length; ti++) {
+      st[teams[ti]] = {pts:0,gp:0,w:0,d:0,l:0,gf:0,ga:0,gd:0};
+    }
+    for (var mi = 0; mi < matches.length; mi++) {
+      var m = matches[mi];
+      if (m.status !== 'finished' || m.score1 === null) continue;
+      var t1 = m.team1, t2 = m.team2;
+      st[t1].gp++; st[t2].gp++;
+      st[t1].gf += m.score1; st[t1].ga += m.score2;
+      st[t2].gf += m.score2; st[t2].ga += m.score1;
+      if (m.score1 > m.score2) { st[t1].w++; st[t1].pts += 3; st[t2].l++; }
+      else if (m.score1 < m.score2) { st[t2].w++; st[t2].pts += 3; st[t1].l++; }
+      else { st[t1].d++; st[t2].d++; st[t1].pts++; st[t2].pts++; }
+    }
+    for (var ti = 0; ti < teams.length; ti++) {
+      st[teams[ti]].gd = st[teams[ti]].gf - st[teams[ti]].ga;
+    }
+    
+    // Sort standings: pts desc, gd desc, gf desc
+    var sortedTeams = teams.slice().sort(function(a,b){
+      if (st[b].pts !== st[a].pts) return st[b].pts - st[a].pts;
+      if (st[b].gd !== st[a].gd) return st[b].gd - st[a].gd;
+      return st[b].gf - st[a].gf;
+    });
+    
+    h += '<div class="gm-group-card">';
+    h += '<div class="gm-header"><h3>' + gk + ' 组</h3><span class="gm-updated">' + (gr.matches.length) + ' 场</span></div>';
+    
+    // Standings table
+    h += '<table class="gm-standings"><thead><tr><th>#</th><th></th><th>球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净</th><th>分</th></tr></thead><tbody>';
+    for (var ti = 0; ti < sortedTeams.length; ti++) {
+      var t = sortedTeams[ti];
+      var s = st[t];
+      var rankClass = ti === 0 ? ' gm-rank-top' : ti === 1 ? ' gm-rank-top' : '';
+      h += '<tr class="gm-standings-row' + rankClass + '"><td class="gm-rank">' + (ti+1) + '</td><td class="gm-flag-cell">' + flag(t) + '</td><td class="gm-team-cell">' + cn(t) + '</td><td>' + s.gp + '</td><td>' + s.w + '</td><td>' + s.d + '</td><td>' + s.l + '</td><td>' + s.gf + '</td><td>' + s.ga + '</td><td class="gm-gd' + (s.gd > 0 ? ' gm-gd-pos' : s.gd < 0 ? ' gm-gd-neg' : '') + '">' + (s.gd > 0 ? '+' : '') + s.gd + '</td><td class="gm-pts">' + s.pts + '</td></tr>';
+    }
+    h += '</tbody></table>';
+    
+    // Matches list
+    h += '<div class="gm-matches">';
+    for (var mi = 0; mi < matches.length; mi++) {
+      var m = matches[mi];
+      var statusClass = m.status === 'finished' ? ' gm-match-done' : '';
+      var isToday = m.date === todayStr;
+      var dateDisplay = isToday ? '<span class="gm-today-badge">今天</span>' : m.date;
+      var scoreDisplay = m.status === 'finished' ? '<span class="gm-score">' + m.score1 + ' - ' + m.score2 + '</span>' :
+                         (m.status === 'live' ? '<span class="gm-score gm-score-live">进行中...</span>' :
+                          '<span class="gm-score gm-score-upcoming">—</span>');
+      h += '<div class="gm-match' + statusClass + '"><span class="gm-match-date">' + dateDisplay + '</span>' +
+        '<span class="gm-team">' + flag(m.team1) + ' ' + cn(m.team1) + '</span>' +
+        scoreDisplay +
+        '<span class="gm-team">' + flag(m.team2) + ' ' + cn(m.team2) + '</span></div>';
+    }
+    h += '</div></div>';
+  }
+  
+  c.innerHTML = h + '<p class="gm-footnote">🔄 每天13:00自动更新比赛结果 · 绿色背景 = 已完赛</p>';
+})();
 
 // ===== Helper functions =====
 function $id(id) { return document.getElementById(id); }
