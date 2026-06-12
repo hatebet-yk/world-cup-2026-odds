@@ -89,6 +89,10 @@ function loadOddsData() {
   return Promise.resolve(window.ODDS_DATA);
 }
 
+function loadScheduleData() {
+  return Promise.resolve(window.SCHEDULE_DATA);
+}
+
 function computeComposite(t, allTeams) {
   // 综合赔率概率和模型概率
   const oddsProb = 1 / t.avgOdds;
