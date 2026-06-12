@@ -2,68 +2,6 @@
  * 2026 世界杯夺冠概率看板 + 赛程 + 八强/黑马预测
  */
 
-const FLAGS = {
-  'Argentina': '🇦🇷', 'Brazil': '🇧🇷', 'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
-  'France': '🇫🇷', 'Germany': '🇩🇪', 'Spain': '🇪🇸',
-  'Portugal': '🇵🇹', 'Netherlands': '🇳🇱', 'Italy': '🇮🇹',
-  'Belgium': '🇧🇪', 'Croatia': '🇭🇷', 'Denmark': '🇩🇰',
-  'Switzerland': '🇨🇭', 'Uruguay': '🇺🇾', 'Mexico': '🇲🇽',
-  'USA': '🇺🇸', 'Japan': '🇯🇵', 'South Korea': '🇰🇷',
-  'Australia': '🇦🇺', 'Canada': '🇨🇦', 'Morocco': '🇲🇦',
-  'Senegal': '🇸🇳', 'Nigeria': '🇳🇬', 'Cameroon': '🇨🇲',
-  'Ghana': '🇬🇭', 'Tunisia': '🇹🇳', 'Egypt': '🇪🇬',
-  'Algeria': '🇩🇿', 'Ivory Coast': '🇨🇮', 'South Africa': '🇿🇦',
-  'Iran': '🇮🇷', 'Saudi Arabia': '🇸🇦', 'Qatar': '🇶🇦',
-  'UAE': '🇦🇪', 'Iraq': '🇮🇶', 'Oman': '🇴🇲',
-  'Ecuador': '🇪🇨', 'Colombia': '🇨🇴', 'Chile': '🇨🇱',
-  'Peru': '🇵🇪', 'Paraguay': '🇵🇾', 'Venezuela': '🇻🇪',
-  'Costa Rica': '🇨🇷', 'Panama': '🇵🇦', 'Jamaica': '🇯🇲',
-  'Honduras': '🇭🇳', 'New Zealand': '🇳🇿', 'Fiji': '🇫🇯',
-  'Serbia': '🇷🇸', 'Poland': '🇵🇱', 'Panama': '🇵🇦',
-  'Sweden': '🇸🇪', 'Norway': '🇳🇴', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
-  'Wales': '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
-  'Jordan': '🇯🇴',
-  'Uzbekistan': '🇺🇿',
-  'Cape Verde': '🇨🇻',
-  'Haiti': '🇭🇹',
-  'Turkey': '🇹🇷',
-  'Bosnia': '🇧🇦',
-  'Czech Republic': '🇨🇿',
-  'Bolivia': '🇧🇴',
-  'Curacao': '🇨🇼',
-};
-
-const CN_NAMES = {
-  'Argentina': '阿根廷', 'Brazil': '巴西', 'England': '英格兰',
-  'France': '法国', 'Germany': '德国', 'Spain': '西班牙',
-  'Portugal': '葡萄牙', 'Netherlands': '荷兰', 'Italy': '意大利',
-  'Belgium': '比利时', 'Croatia': '克罗地亚', 'Denmark': '丹麦',
-  'Switzerland': '瑞士', 'Uruguay': '乌拉圭', 'Mexico': '墨西哥',
-  'USA': '美国', 'Japan': '日本', 'South Korea': '韩国',
-  'Australia': '澳大利亚', 'Canada': '加拿大', 'Morocco': '摩洛哥',
-  'Senegal': '塞内加尔', 'Nigeria': '尼日利亚', 'Cameroon': '喀麦隆',
-  'Ghana': '加纳', 'Tunisia': '突尼斯', 'Egypt': '埃及',
-  'Algeria': '阿尔及利亚', 'Ivory Coast': '科特迪瓦', 'South Africa': '南非',
-  'Iran': '伊朗', 'Saudi Arabia': '沙特阿拉伯', 'Qatar': '卡塔尔',
-  'UAE': '阿联酋', 'Iraq': '伊拉克', 'Oman': '阿曼',
-  'Ecuador': '厄瓜多尔', 'Colombia': '哥伦比亚', 'Chile': '智利',
-  'Peru': '秘鲁', 'Paraguay': '巴拉圭', 'Venezuela': '委内瑞拉',
-  'Costa Rica': '哥斯达黎加', 'Panama': '巴拿马', 'Jamaica': '牙买加',
-  'Honduras': '洪都拉斯', 'New Zealand': '新西兰', 'Fiji': '斐济',
-  'Serbia': '塞尔维亚', 'Poland': '波兰', 'Panama': '巴拿马',
-  'Sweden': '瑞典', 'Norway': '挪威',
-  'Curacao': '库拉索',
-  'Czech Republic': '捷克',
-  'Bosnia': '波黑',
-  'Bolivia': '玻利维亚',
-  'Haiti': '海地',
-  'Cape Verde': '佛得角',
-  'Turkey': '土耳其',
-  'Uzbekistan': '乌兹别克斯坦',
-  'Jordan': '约旦',
-  'Scotland': '苏格兰',
-};
-
 let barChart = null;
 
 // ========== Tab 切换 ==========
@@ -125,7 +63,7 @@ function renderCards(teams) {
     const rank = sortBy === 'name' ? '' : i + 1;
     const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
     const flag = FLAGS[team.name] || '🏳️';
-    const cnName = CN_NAMES[team.name] || team.name;
+    const cnName = CN[team.name] || team.name;
     const probPct = (team.prob * 100).toFixed(1);
 
     return `
@@ -157,7 +95,7 @@ function renderBarChart(teams) {
   const ctx = document.getElementById('barChart').getContext('2d');
 
   const top = teams.slice(0, 16);
-  const labels = top.map(t => CN_NAMES[t.name] || t.name);
+  const labels = top.map(t => CN[t.name] || t.name);
   const data = top.map(t => +(t.prob * 100).toFixed(1));
   const colors = data.map((v, i) => {
     if (i === 0) return '#f59e0b';
@@ -233,7 +171,7 @@ function renderSchedule() {
     groupsGrid.innerHTML = data.groups.map(g => {
       const teamsHtml = g.teams.map((t, idx) => {
         const flag = FLAGS[t] || '🏳️';
-        const cn = CN_NAMES[t] || t;
+        const cn = CN[t] || t;
         return `<div class="team-item"><span class="group-rank">#${idx+1}</span><span class="group-flag">${flag}</span><span>${cn}</span></div>`;
       }).join('');
       return `<div class="group-card"><h3>${g.group} 组</h3>${teamsHtml}</div>`;
@@ -354,7 +292,7 @@ function renderPredictions() {
     const qfContainer = document.getElementById('qfList');
     qfContainer.innerHTML = qfAnalysis.slice(0, 8).map((t, i) => {
       const flag = FLAGS[t.name] || '🏳️';
-      const cn = CN_NAMES[t.name] || t.name;
+      const cn = CN[t.name] || t.name;
       const qfPct = (t.quarterfinalProb * 100).toFixed(0);
       const rank = i + 1;
       const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
@@ -379,7 +317,7 @@ function renderPredictions() {
     const dhContainer = document.getElementById('darkHorseList');
     dhContainer.innerHTML = darkHorses.map((t, i) => {
       const flag = FLAGS[t.name] || '🏳️';
-      const cn = CN_NAMES[t.name] || t.name;
+      const cn = CN[t.name] || t.name;
       const score = (t.darkHorseScore * 100).toFixed(0);
 
       return `
@@ -452,7 +390,7 @@ function renderTrendChart(rawData, currentTeams) {
     const colors = ['#f59e0b','#3b82f6','#ef4444','#22c55e','#a855f7','#ec4899'];
     
     return {
-      label: CN_NAMES[name] || name,
+      label: CN[name] || name,
       data: allProbs,
       borderColor: colors[idx % colors.length],
       backgroundColor: colors[idx % colors.length] + '20',
@@ -534,8 +472,8 @@ function renderBracket() {
       const t2 = m.team2 || 'TBD';
       const f1 = FLAGS[t1] || '🏳️';
       const f2 = FLAGS[t2] || '🏳️';
-      const c1 = CN_NAMES[t1] || t1;
-      const c2 = CN_NAMES[t2] || t2;
+      const c1 = CN[t1] || t1;
+      const c2 = CN[t2] || t2;
       const winner = m.winner;
       
       html += '<div class="bracket-match">';
@@ -571,12 +509,12 @@ function renderBracket() {
     html += '<div class="bracket-match bracket-final">';
     html += `<div class="bracket-team ${f.winner === f.team1 ? 'bracket-winner' : ''}">
       <span class="bracket-flag">${FLAGS[f.team1] || '🏳️'}</span>
-      <span class="bracket-name">${CN_NAMES[f.team1] || f.team1}</span>
+      <span class="bracket-name">${CN[f.team1] || f.team1}</span>
     </div>`;
     html += '<div class="bracket-vs">VS</div>';
     html += `<div class="bracket-team ${f.winner === f.team2 ? 'bracket-winner' : ''}">
       <span class="bracket-flag">${FLAGS[f.team2] || '🏳️'}</span>
-      <span class="bracket-name">${CN_NAMES[f.team2] || f.team2}</span>
+      <span class="bracket-name">${CN[f.team2] || f.team2}</span>
     </div>`;
     html += '</div></div></div>';
   }
@@ -603,7 +541,7 @@ function renderPlayers() {
           <div class="player-flag">${flag}</div>
           <div class="player-info">
             <span class="player-name">${p.name}</span>
-            <span class="player-country">${CN_NAMES[p.country] || p.country}</span>
+            <span class="player-country">${CN[p.country] || p.country}</span>
           </div>
           <div class="player-odds">赔率 ${p.avgOdds.toFixed(1)}</div>
           <div class="player-prob-bar">
@@ -631,7 +569,7 @@ function renderPlayers() {
           <div class="player-flag">${flag}</div>
           <div class="player-info">
             <span class="player-name">${p.name}</span>
-            <span class="player-country">${CN_NAMES[p.country] || p.country}</span>
+            <span class="player-country">${CN[p.country] || p.country}</span>
           </div>
           <div class="player-odds">赔率 ${p.avgOdds.toFixed(1)}</div>
           <div class="player-prob-bar">
