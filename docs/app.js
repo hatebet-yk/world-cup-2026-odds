@@ -22,6 +22,15 @@ const FLAGS = {
   'Serbia': '🇷🇸', 'Poland': '🇵🇱', 'Panama': '🇵🇦',
   'Sweden': '🇸🇪', 'Norway': '🇳🇴', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
   'Wales': '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
+  'Jordan': '🇯🇴',
+  'Uzbekistan': '🇺🇿',
+  'Cape Verde': '🇨🇻',
+  'Haiti': '🇭🇹',
+  'Turkey': '🇹🇷',
+  'Bosnia': '🇧🇦',
+  'Czech Republic': '🇨🇿',
+  'Bolivia': '🇧🇴',
+  'Curacao': '🇨🇼',
 };
 
 const CN_NAMES = {
@@ -43,6 +52,16 @@ const CN_NAMES = {
   'Honduras': '洪都拉斯', 'New Zealand': '新西兰', 'Fiji': '斐济',
   'Serbia': '塞尔维亚', 'Poland': '波兰', 'Panama': '巴拿马',
   'Sweden': '瑞典', 'Norway': '挪威',
+  'Curacao': '库拉索',
+  'Czech Republic': '捷克',
+  'Bosnia': '波黑',
+  'Bolivia': '玻利维亚',
+  'Haiti': '海地',
+  'Cape Verde': '佛得角',
+  'Turkey': '土耳其',
+  'Uzbekistan': '乌兹别克斯坦',
+  'Jordan': '约旦',
+  'Scotland': '苏格兰',
 };
 
 let barChart = null;
