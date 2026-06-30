@@ -1,657 +1,776 @@
 {
   "updated": "2026-07-01",
-  "groups": {},
+  "groups": {
+    "Group A": {
+      "teams": [
+        "Mexico",
+        "South Africa",
+        "Korea Republic",
+        "Czechia"
+      ],
+      "matches": [
+        {
+          "id": "400021443",
+          "date": "2026-06-11",
+          "team1": "Mexico",
+          "team2": "South Africa",
+          "score1": 2,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021441",
+          "date": "2026-06-11",
+          "team1": "Korea Republic",
+          "team2": "Czechia",
+          "score1": 2,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021440",
+          "date": "2026-06-18",
+          "team1": "Czechia",
+          "team2": "South Africa",
+          "score1": 1,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021442",
+          "date": "2026-06-18",
+          "team1": "Mexico",
+          "team2": "Korea Republic",
+          "score1": 1,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021445",
+          "date": "2026-06-24",
+          "team1": "South Africa",
+          "team2": "Korea Republic",
+          "score1": 1,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021444",
+          "date": "2026-06-24",
+          "team1": "Czechia",
+          "team2": "Mexico",
+          "score1": 0,
+          "score2": 3,
+          "status": "finished"
+        }
+      ]
+    },
+    "Group B": {
+      "teams": [
+        "Canada",
+        "Bosnia and Herzegovina",
+        "Qatar",
+        "Switzerland"
+      ],
+      "matches": [
+        {
+          "id": "400021449",
+          "date": "2026-06-12",
+          "team1": "Canada",
+          "team2": "Bosnia and Herzegovina",
+          "score1": 1,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021447",
+          "date": "2026-06-13",
+          "team1": "Qatar",
+          "team2": "Switzerland",
+          "score1": 1,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021446",
+          "date": "2026-06-18",
+          "team1": "Switzerland",
+          "team2": "Bosnia and Herzegovina",
+          "score1": 4,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021450",
+          "date": "2026-06-18",
+          "team1": "Canada",
+          "team2": "Qatar",
+          "score1": 6,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021448",
+          "date": "2026-06-24",
+          "team1": "Bosnia and Herzegovina",
+          "team2": "Qatar",
+          "score1": 3,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021451",
+          "date": "2026-06-24",
+          "team1": "Switzerland",
+          "team2": "Canada",
+          "score1": 2,
+          "score2": 1,
+          "status": "finished"
+        }
+      ]
+    },
+    "Group D": {
+      "teams": [
+        "USA",
+        "Paraguay",
+        "Australia",
+        "Türkiye"
+      ],
+      "matches": [
+        {
+          "id": "400021458",
+          "date": "2026-06-12",
+          "team1": "USA",
+          "team2": "Paraguay",
+          "score1": 4,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021463",
+          "date": "2026-06-13",
+          "team1": "Australia",
+          "team2": "Türkiye",
+          "score1": 2,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021462",
+          "date": "2026-06-19",
+          "team1": "USA",
+          "team2": "Australia",
+          "score1": 2,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021460",
+          "date": "2026-06-19",
+          "team1": "Türkiye",
+          "team2": "Paraguay",
+          "score1": 0,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021461",
+          "date": "2026-06-25",
+          "team1": "Paraguay",
+          "team2": "Australia",
+          "score1": 0,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021459",
+          "date": "2026-06-25",
+          "team1": "Türkiye",
+          "team2": "USA",
+          "score1": 3,
+          "score2": 2,
+          "status": "finished"
+        }
+      ]
+    },
+    "Group C": {
+      "teams": [
+        "Brazil",
+        "Morocco",
+        "Haiti",
+        "Scotland"
+      ],
+      "matches": [
+        {
+          "id": "400021456",
+          "date": "2026-06-13",
+          "team1": "Brazil",
+          "team2": "Morocco",
+          "score1": 1,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021453",
+          "date": "2026-06-13",
+          "team1": "Haiti",
+          "team2": "Scotland",
+          "score1": 0,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021454",
+          "date": "2026-06-19",
+          "team1": "Scotland",
+          "team2": "Morocco",
+          "score1": 0,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021457",
+          "date": "2026-06-19",
+          "team1": "Brazil",
+          "team2": "Haiti",
+          "score1": 3,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021452",
+          "date": "2026-06-24",
+          "team1": "Morocco",
+          "team2": "Haiti",
+          "score1": 4,
+          "score2": 2,
+          "status": "finished"
+        },
+        {
+          "id": "400021455",
+          "date": "2026-06-24",
+          "team1": "Scotland",
+          "team2": "Brazil",
+          "score1": 0,
+          "score2": 3,
+          "status": "finished"
+        }
+      ]
+    },
+    "Group E": {
+      "teams": [
+        "Germany",
+        "Curaçao",
+        "Côte d'Ivoire",
+        "Ecuador"
+      ],
+      "matches": [
+        {
+          "id": "400021464",
+          "date": "2026-06-14",
+          "team1": "Germany",
+          "team2": "Curaçao",
+          "score1": 7,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021467",
+          "date": "2026-06-14",
+          "team1": "Côte d'Ivoire",
+          "team2": "Ecuador",
+          "score1": 1,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021469",
+          "date": "2026-06-20",
+          "team1": "Germany",
+          "team2": "Côte d'Ivoire",
+          "score1": 2,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021465",
+          "date": "2026-06-20",
+          "team1": "Ecuador",
+          "team2": "Curaçao",
+          "score1": 0,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021468",
+          "date": "2026-06-25",
+          "team1": "Curaçao",
+          "team2": "Côte d'Ivoire",
+          "score1": 0,
+          "score2": 2,
+          "status": "finished"
+        },
+        {
+          "id": "400021466",
+          "date": "2026-06-25",
+          "team1": "Ecuador",
+          "team2": "Germany",
+          "score1": 2,
+          "score2": 1,
+          "status": "finished"
+        }
+      ]
+    },
+    "Group F": {
+      "teams": [
+        "Netherlands",
+        "Japan",
+        "Sweden",
+        "Tunisia"
+      ],
+      "matches": [
+        {
+          "id": "400021470",
+          "date": "2026-06-14",
+          "team1": "Netherlands",
+          "team2": "Japan",
+          "score1": 2,
+          "score2": 2,
+          "status": "finished"
+        },
+        {
+          "id": "400021474",
+          "date": "2026-06-14",
+          "team1": "Sweden",
+          "team2": "Tunisia",
+          "score1": 5,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021472",
+          "date": "2026-06-20",
+          "team1": "Netherlands",
+          "team2": "Sweden",
+          "score1": 5,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021475",
+          "date": "2026-06-20",
+          "team1": "Tunisia",
+          "team2": "Japan",
+          "score1": 0,
+          "score2": 4,
+          "status": "finished"
+        },
+        {
+          "id": "400021473",
+          "date": "2026-06-25",
+          "team1": "Tunisia",
+          "team2": "Netherlands",
+          "score1": 1,
+          "score2": 3,
+          "status": "finished"
+        },
+        {
+          "id": "400021471",
+          "date": "2026-06-25",
+          "team1": "Japan",
+          "team2": "Sweden",
+          "score1": 1,
+          "score2": 1,
+          "status": "finished"
+        }
+      ]
+    },
+    "Group H": {
+      "teams": [
+        "Spain",
+        "Cabo Verde",
+        "Saudi Arabia",
+        "Uruguay"
+      ],
+      "matches": [
+        {
+          "id": "400021482",
+          "date": "2026-06-15",
+          "team1": "Spain",
+          "team2": "Cabo Verde",
+          "score1": 0,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021486",
+          "date": "2026-06-15",
+          "team1": "Saudi Arabia",
+          "team2": "Uruguay",
+          "score1": 1,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021483",
+          "date": "2026-06-21",
+          "team1": "Spain",
+          "team2": "Saudi Arabia",
+          "score1": 4,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021487",
+          "date": "2026-06-21",
+          "team1": "Uruguay",
+          "team2": "Cabo Verde",
+          "score1": 2,
+          "score2": 2,
+          "status": "finished"
+        },
+        {
+          "id": "400021484",
+          "date": "2026-06-26",
+          "team1": "Uruguay",
+          "team2": "Spain",
+          "score1": 0,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021485",
+          "date": "2026-06-26",
+          "team1": "Cabo Verde",
+          "team2": "Saudi Arabia",
+          "score1": 0,
+          "score2": 0,
+          "status": "finished"
+        }
+      ]
+    },
+    "Group G": {
+      "teams": [
+        "Belgium",
+        "Egypt",
+        "IR Iran",
+        "New Zealand"
+      ],
+      "matches": [
+        {
+          "id": "400021478",
+          "date": "2026-06-15",
+          "team1": "Belgium",
+          "team2": "Egypt",
+          "score1": 1,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021476",
+          "date": "2026-06-15",
+          "team1": "IR Iran",
+          "team2": "New Zealand",
+          "score1": 2,
+          "score2": 2,
+          "status": "finished"
+        },
+        {
+          "id": "400021477",
+          "date": "2026-06-21",
+          "team1": "Belgium",
+          "team2": "IR Iran",
+          "score1": 0,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021480",
+          "date": "2026-06-21",
+          "team1": "New Zealand",
+          "team2": "Egypt",
+          "score1": 1,
+          "score2": 3,
+          "status": "finished"
+        },
+        {
+          "id": "400021481",
+          "date": "2026-06-26",
+          "team1": "New Zealand",
+          "team2": "Belgium",
+          "score1": 1,
+          "score2": 5,
+          "status": "finished"
+        },
+        {
+          "id": "400021479",
+          "date": "2026-06-26",
+          "team1": "Egypt",
+          "team2": "IR Iran",
+          "score1": 1,
+          "score2": 1,
+          "status": "finished"
+        }
+      ]
+    },
+    "Group I": {
+      "teams": [
+        "France",
+        "Senegal",
+        "Iraq",
+        "Norway"
+      ],
+      "matches": [
+        {
+          "id": "400021490",
+          "date": "2026-06-16",
+          "team1": "France",
+          "team2": "Senegal",
+          "score1": 3,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021488",
+          "date": "2026-06-16",
+          "team1": "Iraq",
+          "team2": "Norway",
+          "score1": 1,
+          "score2": 4,
+          "status": "finished"
+        },
+        {
+          "id": "400021492",
+          "date": "2026-06-22",
+          "team1": "France",
+          "team2": "Iraq",
+          "score1": 3,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021491",
+          "date": "2026-06-22",
+          "team1": "Norway",
+          "team2": "Senegal",
+          "score1": 3,
+          "score2": 2,
+          "status": "finished"
+        },
+        {
+          "id": "400021493",
+          "date": "2026-06-26",
+          "team1": "Senegal",
+          "team2": "Iraq",
+          "score1": 5,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021489",
+          "date": "2026-06-26",
+          "team1": "Norway",
+          "team2": "France",
+          "score1": 1,
+          "score2": 4,
+          "status": "finished"
+        }
+      ]
+    },
+    "Group J": {
+      "teams": [
+        "Argentina",
+        "Algeria",
+        "Austria",
+        "Jordan"
+      ],
+      "matches": [
+        {
+          "id": "400021496",
+          "date": "2026-06-16",
+          "team1": "Argentina",
+          "team2": "Algeria",
+          "score1": 3,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021498",
+          "date": "2026-06-16",
+          "team1": "Austria",
+          "team2": "Jordan",
+          "score1": 3,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021494",
+          "date": "2026-06-22",
+          "team1": "Argentina",
+          "team2": "Austria",
+          "score1": 2,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021499",
+          "date": "2026-06-22",
+          "team1": "Jordan",
+          "team2": "Algeria",
+          "score1": 1,
+          "score2": 2,
+          "status": "finished"
+        },
+        {
+          "id": "400021497",
+          "date": "2026-06-27",
+          "team1": "Algeria",
+          "team2": "Austria",
+          "score1": 3,
+          "score2": 3,
+          "status": "finished"
+        },
+        {
+          "id": "400021495",
+          "date": "2026-06-27",
+          "team1": "Jordan",
+          "team2": "Argentina",
+          "score1": 1,
+          "score2": 3,
+          "status": "finished"
+        }
+      ]
+    },
+    "Group K": {
+      "teams": [
+        "Portugal",
+        "Congo DR",
+        "Uzbekistan",
+        "Colombia"
+      ],
+      "matches": [
+        {
+          "id": "400021502",
+          "date": "2026-06-17",
+          "team1": "Portugal",
+          "team2": "Congo DR",
+          "score1": 1,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021504",
+          "date": "2026-06-17",
+          "team1": "Uzbekistan",
+          "team2": "Colombia",
+          "score1": 1,
+          "score2": 3,
+          "status": "finished"
+        },
+        {
+          "id": "400021503",
+          "date": "2026-06-23",
+          "team1": "Portugal",
+          "team2": "Uzbekistan",
+          "score1": 5,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021501",
+          "date": "2026-06-23",
+          "team1": "Colombia",
+          "team2": "Congo DR",
+          "score1": 1,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021500",
+          "date": "2026-06-27",
+          "team1": "Congo DR",
+          "team2": "Uzbekistan",
+          "score1": 3,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021505",
+          "date": "2026-06-27",
+          "team1": "Colombia",
+          "team2": "Portugal",
+          "score1": 0,
+          "score2": 0,
+          "status": "finished"
+        }
+      ]
+    },
+    "Group L": {
+      "teams": [
+        "England",
+        "Croatia",
+        "Ghana",
+        "Panama"
+      ],
+      "matches": [
+        {
+          "id": "400021507",
+          "date": "2026-06-17",
+          "team1": "England",
+          "team2": "Croatia",
+          "score1": 4,
+          "score2": 2,
+          "status": "finished"
+        },
+        {
+          "id": "400021510",
+          "date": "2026-06-17",
+          "team1": "Ghana",
+          "team2": "Panama",
+          "score1": 1,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021506",
+          "date": "2026-06-23",
+          "team1": "England",
+          "team2": "Ghana",
+          "score1": 0,
+          "score2": 0,
+          "status": "finished"
+        },
+        {
+          "id": "400021511",
+          "date": "2026-06-23",
+          "team1": "Panama",
+          "team2": "Croatia",
+          "score1": 0,
+          "score2": 1,
+          "status": "finished"
+        },
+        {
+          "id": "400021508",
+          "date": "2026-06-27",
+          "team1": "Panama",
+          "team2": "England",
+          "score1": 0,
+          "score2": 2,
+          "status": "finished"
+        },
+        {
+          "id": "400021509",
+          "date": "2026-06-27",
+          "team1": "Croatia",
+          "team2": "Ghana",
+          "score1": 2,
+          "score2": 1,
+          "status": "finished"
+        }
+      ]
+    }
+  },
   "knockout": {
-    "First Stage": [
-      {
-        "id": "400021443",
-        "date": "2026-06-11",
-        "team1": "Mexico",
-        "team2": "South Africa",
-        "score1": 2,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021441",
-        "date": "2026-06-11",
-        "team1": "Korea Republic",
-        "team2": "Czechia",
-        "score1": 2,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021449",
-        "date": "2026-06-12",
-        "team1": "Canada",
-        "team2": "Bosnia and Herzegovina",
-        "score1": 1,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021458",
-        "date": "2026-06-12",
-        "team1": "USA",
-        "team2": "Paraguay",
-        "score1": 4,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021447",
-        "date": "2026-06-13",
-        "team1": "Qatar",
-        "team2": "Switzerland",
-        "score1": 1,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021456",
-        "date": "2026-06-13",
-        "team1": "Brazil",
-        "team2": "Morocco",
-        "score1": 1,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021453",
-        "date": "2026-06-13",
-        "team1": "Haiti",
-        "team2": "Scotland",
-        "score1": 0,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021463",
-        "date": "2026-06-13",
-        "team1": "Australia",
-        "team2": "Türkiye",
-        "score1": 2,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021464",
-        "date": "2026-06-14",
-        "team1": "Germany",
-        "team2": "Curaçao",
-        "score1": 7,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021470",
-        "date": "2026-06-14",
-        "team1": "Netherlands",
-        "team2": "Japan",
-        "score1": 2,
-        "score2": 2,
-        "status": "finished"
-      },
-      {
-        "id": "400021467",
-        "date": "2026-06-14",
-        "team1": "Côte d'Ivoire",
-        "team2": "Ecuador",
-        "score1": 1,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021474",
-        "date": "2026-06-14",
-        "team1": "Sweden",
-        "team2": "Tunisia",
-        "score1": 5,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021482",
-        "date": "2026-06-15",
-        "team1": "Spain",
-        "team2": "Cabo Verde",
-        "score1": 0,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021478",
-        "date": "2026-06-15",
-        "team1": "Belgium",
-        "team2": "Egypt",
-        "score1": 1,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021486",
-        "date": "2026-06-15",
-        "team1": "Saudi Arabia",
-        "team2": "Uruguay",
-        "score1": 1,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021476",
-        "date": "2026-06-15",
-        "team1": "IR Iran",
-        "team2": "New Zealand",
-        "score1": 2,
-        "score2": 2,
-        "status": "finished"
-      },
-      {
-        "id": "400021490",
-        "date": "2026-06-16",
-        "team1": "France",
-        "team2": "Senegal",
-        "score1": 3,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021488",
-        "date": "2026-06-16",
-        "team1": "Iraq",
-        "team2": "Norway",
-        "score1": 1,
-        "score2": 4,
-        "status": "finished"
-      },
-      {
-        "id": "400021496",
-        "date": "2026-06-16",
-        "team1": "Argentina",
-        "team2": "Algeria",
-        "score1": 3,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021498",
-        "date": "2026-06-16",
-        "team1": "Austria",
-        "team2": "Jordan",
-        "score1": 3,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021502",
-        "date": "2026-06-17",
-        "team1": "Portugal",
-        "team2": "Congo DR",
-        "score1": 1,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021507",
-        "date": "2026-06-17",
-        "team1": "England",
-        "team2": "Croatia",
-        "score1": 4,
-        "score2": 2,
-        "status": "finished"
-      },
-      {
-        "id": "400021510",
-        "date": "2026-06-17",
-        "team1": "Ghana",
-        "team2": "Panama",
-        "score1": 1,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021504",
-        "date": "2026-06-17",
-        "team1": "Uzbekistan",
-        "team2": "Colombia",
-        "score1": 1,
-        "score2": 3,
-        "status": "finished"
-      },
-      {
-        "id": "400021440",
-        "date": "2026-06-18",
-        "team1": "Czechia",
-        "team2": "South Africa",
-        "score1": 1,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021446",
-        "date": "2026-06-18",
-        "team1": "Switzerland",
-        "team2": "Bosnia and Herzegovina",
-        "score1": 4,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021450",
-        "date": "2026-06-18",
-        "team1": "Canada",
-        "team2": "Qatar",
-        "score1": 6,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021442",
-        "date": "2026-06-18",
-        "team1": "Mexico",
-        "team2": "Korea Republic",
-        "score1": 1,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021462",
-        "date": "2026-06-19",
-        "team1": "USA",
-        "team2": "Australia",
-        "score1": 2,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021454",
-        "date": "2026-06-19",
-        "team1": "Scotland",
-        "team2": "Morocco",
-        "score1": 0,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021457",
-        "date": "2026-06-19",
-        "team1": "Brazil",
-        "team2": "Haiti",
-        "score1": 3,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021460",
-        "date": "2026-06-19",
-        "team1": "Türkiye",
-        "team2": "Paraguay",
-        "score1": 0,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021472",
-        "date": "2026-06-20",
-        "team1": "Netherlands",
-        "team2": "Sweden",
-        "score1": 5,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021469",
-        "date": "2026-06-20",
-        "team1": "Germany",
-        "team2": "Côte d'Ivoire",
-        "score1": 2,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021465",
-        "date": "2026-06-20",
-        "team1": "Ecuador",
-        "team2": "Curaçao",
-        "score1": 0,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021475",
-        "date": "2026-06-20",
-        "team1": "Tunisia",
-        "team2": "Japan",
-        "score1": 0,
-        "score2": 4,
-        "status": "finished"
-      },
-      {
-        "id": "400021483",
-        "date": "2026-06-21",
-        "team1": "Spain",
-        "team2": "Saudi Arabia",
-        "score1": 4,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021477",
-        "date": "2026-06-21",
-        "team1": "Belgium",
-        "team2": "IR Iran",
-        "score1": 0,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021487",
-        "date": "2026-06-21",
-        "team1": "Uruguay",
-        "team2": "Cabo Verde",
-        "score1": 2,
-        "score2": 2,
-        "status": "finished"
-      },
-      {
-        "id": "400021480",
-        "date": "2026-06-21",
-        "team1": "New Zealand",
-        "team2": "Egypt",
-        "score1": 1,
-        "score2": 3,
-        "status": "finished"
-      },
-      {
-        "id": "400021494",
-        "date": "2026-06-22",
-        "team1": "Argentina",
-        "team2": "Austria",
-        "score1": 2,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021492",
-        "date": "2026-06-22",
-        "team1": "France",
-        "team2": "Iraq",
-        "score1": 3,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021491",
-        "date": "2026-06-22",
-        "team1": "Norway",
-        "team2": "Senegal",
-        "score1": 3,
-        "score2": 2,
-        "status": "finished"
-      },
-      {
-        "id": "400021499",
-        "date": "2026-06-22",
-        "team1": "Jordan",
-        "team2": "Algeria",
-        "score1": 1,
-        "score2": 2,
-        "status": "finished"
-      },
-      {
-        "id": "400021503",
-        "date": "2026-06-23",
-        "team1": "Portugal",
-        "team2": "Uzbekistan",
-        "score1": 5,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021506",
-        "date": "2026-06-23",
-        "team1": "England",
-        "team2": "Ghana",
-        "score1": 0,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021511",
-        "date": "2026-06-23",
-        "team1": "Panama",
-        "team2": "Croatia",
-        "score1": 0,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021501",
-        "date": "2026-06-23",
-        "team1": "Colombia",
-        "team2": "Congo DR",
-        "score1": 1,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021448",
-        "date": "2026-06-24",
-        "team1": "Bosnia and Herzegovina",
-        "team2": "Qatar",
-        "score1": 3,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021451",
-        "date": "2026-06-24",
-        "team1": "Switzerland",
-        "team2": "Canada",
-        "score1": 2,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021452",
-        "date": "2026-06-24",
-        "team1": "Morocco",
-        "team2": "Haiti",
-        "score1": 4,
-        "score2": 2,
-        "status": "finished"
-      },
-      {
-        "id": "400021455",
-        "date": "2026-06-24",
-        "team1": "Scotland",
-        "team2": "Brazil",
-        "score1": 0,
-        "score2": 3,
-        "status": "finished"
-      },
-      {
-        "id": "400021445",
-        "date": "2026-06-24",
-        "team1": "South Africa",
-        "team2": "Korea Republic",
-        "score1": 1,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021444",
-        "date": "2026-06-24",
-        "team1": "Czechia",
-        "team2": "Mexico",
-        "score1": 0,
-        "score2": 3,
-        "status": "finished"
-      },
-      {
-        "id": "400021468",
-        "date": "2026-06-25",
-        "team1": "Curaçao",
-        "team2": "Côte d'Ivoire",
-        "score1": 0,
-        "score2": 2,
-        "status": "finished"
-      },
-      {
-        "id": "400021466",
-        "date": "2026-06-25",
-        "team1": "Ecuador",
-        "team2": "Germany",
-        "score1": 2,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021473",
-        "date": "2026-06-25",
-        "team1": "Tunisia",
-        "team2": "Netherlands",
-        "score1": 1,
-        "score2": 3,
-        "status": "finished"
-      },
-      {
-        "id": "400021471",
-        "date": "2026-06-25",
-        "team1": "Japan",
-        "team2": "Sweden",
-        "score1": 1,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021461",
-        "date": "2026-06-25",
-        "team1": "Paraguay",
-        "team2": "Australia",
-        "score1": 0,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021459",
-        "date": "2026-06-25",
-        "team1": "Türkiye",
-        "team2": "USA",
-        "score1": 3,
-        "score2": 2,
-        "status": "finished"
-      },
-      {
-        "id": "400021493",
-        "date": "2026-06-26",
-        "team1": "Senegal",
-        "team2": "Iraq",
-        "score1": 5,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021489",
-        "date": "2026-06-26",
-        "team1": "Norway",
-        "team2": "France",
-        "score1": 1,
-        "score2": 4,
-        "status": "finished"
-      },
-      {
-        "id": "400021484",
-        "date": "2026-06-26",
-        "team1": "Uruguay",
-        "team2": "Spain",
-        "score1": 0,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021485",
-        "date": "2026-06-26",
-        "team1": "Cabo Verde",
-        "team2": "Saudi Arabia",
-        "score1": 0,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021481",
-        "date": "2026-06-26",
-        "team1": "New Zealand",
-        "team2": "Belgium",
-        "score1": 1,
-        "score2": 5,
-        "status": "finished"
-      },
-      {
-        "id": "400021479",
-        "date": "2026-06-26",
-        "team1": "Egypt",
-        "team2": "IR Iran",
-        "score1": 1,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021508",
-        "date": "2026-06-27",
-        "team1": "Panama",
-        "team2": "England",
-        "score1": 0,
-        "score2": 2,
-        "status": "finished"
-      },
-      {
-        "id": "400021509",
-        "date": "2026-06-27",
-        "team1": "Croatia",
-        "team2": "Ghana",
-        "score1": 2,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021500",
-        "date": "2026-06-27",
-        "team1": "Congo DR",
-        "team2": "Uzbekistan",
-        "score1": 3,
-        "score2": 1,
-        "status": "finished"
-      },
-      {
-        "id": "400021505",
-        "date": "2026-06-27",
-        "team1": "Colombia",
-        "team2": "Portugal",
-        "score1": 0,
-        "score2": 0,
-        "status": "finished"
-      },
-      {
-        "id": "400021497",
-        "date": "2026-06-27",
-        "team1": "Algeria",
-        "team2": "Austria",
-        "score1": 3,
-        "score2": 3,
-        "status": "finished"
-      },
-      {
-        "id": "400021495",
-        "date": "2026-06-27",
-        "team1": "Jordan",
-        "team2": "Argentina",
-        "score1": 1,
-        "score2": 3,
-        "status": "finished"
-      }
-    ],
     "Round of 32": [
       {
         "id": "400021518",

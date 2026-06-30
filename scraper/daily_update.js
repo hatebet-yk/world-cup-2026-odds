@@ -45,8 +45,8 @@ function statusText(statusCode) {
 function buildSchedule(fifaResults) {
   // Determine all groups from first-stage matches
   const groups = {};
-  const firstStageMatches = fifaResults.filter(r => getStageName(r) === 'First stage' && r.Home && r.Away);
-  const knockoutMatches = fifaResults.filter(r => getStageName(r) !== 'First stage' && r.Home && r.Away);
+  const firstStageMatches = fifaResults.filter(r => (getStageName(r) === 'First Stage' || getStageName(r) === 'First stage') && r.Home && r.Away);
+  const knockoutMatches = fifaResults.filter(r => getStageName(r) !== 'First Stage' && getStageName(r) !== 'First stage' && r.Home && r.Away);
 
   for (const r of firstStageMatches) {
     const gname = getGroupName(r);
