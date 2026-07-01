@@ -817,8 +817,8 @@
         "date": "2026-06-30",
         "team1": "Côte d'Ivoire",
         "team2": "Norway",
-        "score1": 0,
-        "score2": 0,
+        "score1": 1,
+        "score2": 2,
         "status": "finished"
       },
       {
@@ -826,18 +826,18 @@
         "date": "2026-06-30",
         "team1": "France",
         "team2": "Sweden",
-        "score1": null,
-        "score2": null,
-        "status": "upcoming"
+        "score1": 3,
+        "score2": 0,
+        "status": "finished"
       },
       {
         "id": "400021520",
         "date": "2026-06-30",
         "team1": "Mexico",
         "team2": "Ecuador",
-        "score1": null,
-        "score2": null,
-        "status": "upcoming"
+        "score1": 2,
+        "score2": 0,
+        "status": "finished"
       },
       {
         "id": "400021512",
@@ -927,6 +927,24 @@
         "date": "2026-07-04",
         "team1": "Canada",
         "team2": "Morocco",
+        "score1": null,
+        "score2": null,
+        "status": "upcoming"
+      },
+      {
+        "id": "400021533",
+        "date": "2026-07-04",
+        "team1": "Paraguay",
+        "team2": "France",
+        "score1": null,
+        "score2": null,
+        "status": "upcoming"
+      },
+      {
+        "id": "400021532",
+        "date": "2026-07-05",
+        "team1": "Brazil",
+        "team2": "Norway",
         "score1": null,
         "score2": null,
         "status": "upcoming"
